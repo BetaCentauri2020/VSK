@@ -1,0 +1,139 @@
+﻿@model vsk_betacent.Models.ViewModels.ManageStaffViewModel
+@{ Layout = "_Layout"; }
+
+
+
+    ============================================== -->
+<!-- Start Main content Wrapper
+============================================== -->
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+
+        <!-- Breadcrumb -->
+        <div class="page-breadcrumb">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h4>Add Staff</h4>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Manage Staff</li>
+                        <li><a href="index.html">Add Staff</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Breadcrumb -->
+        <!-- Start -->
+        @Html.AntiForgeryToken()
+        @using (Html.BeginForm("AddStaff", "ManageStaff", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <section class="ation-statistics">
+                <div class="row">
+                    <div class="col-xl-12 col-md-12 col-12 mb-xl-0 mb-4">
+
+                        <div class="card ation-card">
+                            <div class="card-header">
+                                <h3>Add Staff</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-horizontal">
+                                    <div class="form-group row">
+                                        <label class="col-md-2 control-label">Name <span class="text-danger">*</span></label>
+                                        <div class="col-md-4">
+                                            @Html.EditorFor(x => x.addStaff.txt_nm, new { htmlAttributes = new { @class = "form-control", @placeholder = "Your Name",@required="required" } })
+                                            
+                                        </div>
+                                        <label class="col-md-2 control-label">Qualification<span class="text-danger">*</span></label>
+                                        <div class="col-md-4">
+                                            @Html.DropDownListFor(s => s.addStaff.int_fk_qua, new SelectList(Model.quaificationList, "int_id", "txt_qua"), "--Select--", new { @class = "form-control single-select", id = "drpqualist",@required="required" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 control-label">Profession<span class="text-danger">*</span></label>
+                                        <div class="col-md-4">
+                                            @Html.DropDownListFor(s => s.addStaff.int_fk_prof, new SelectList(Model.profesnList, "int_id", "txt_profs"), "--Select--", new { @class = "form-control single-select" ,@required="required"})
+                                        </div>
+                                        <label class="col-md-2 control-label" for="example-email">Designation<span class="text-danger">*</span></label>
+                                        <div class="col-md-4">
+                                            @Html.DropDownListFor(s => s.addStaff.int_fk_desg, new SelectList(Model.desigTypeList, "int_id", "txt_desig"), "--Select--", new { @class = "form-control single-select" ,@required="required"})
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 control-label">Subject Area</label>
+                                        <div class="col-md-4">
+
+                                            @Html.ListBoxFor(s => s.addStaff.int_fk_sub_area, new MultiSelectList(Model.subAreaList, "int_id", "txt_sub"), new { @class = "chzn-select form-control", multiple = "multiple" })
+                                           
+                                        </div>
+                                        <label class="col-md-2 control-label">DOB<span class="text-danger">*</span></label>
+                                        <div class="col-md-4">
+                                            @Html.TextBoxFor(s => s.addStaff.dt_dob, "{0:dd/MM/yyyy}", new { @class = "form-control", @type = "date",@required="required" })
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 control-label">Contact No.</label>
+                                        <div class="col-md-4">
+                                            @Html.EditorFor(x => x.addStaff.txt_mob, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mobile", @type = "number",@maxLength=10 } })
+                                        </div>
+                                        <label class="col-md-2 control-label">Email ID<span class="text-danger">*</span></label>
+                                        <div class="col-md-4">
+                                            @Html.EditorFor(x => x.addStaff.txt_email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" ,@required="required"} })
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 control-label">Blood Group<span class="text-danger">*</span></label>
+                                        <div class="col-md-4">
+                                            @Html.DropDownListFor(s => s.addStaff.int_fk_bld_grp, new SelectList(Model.bloodGroupList, "int_id", "txt_bld_gr"), "--Select--", new { @class = "form-control single-select",@required="required" })
+                                            
+                                        </div>
+                                        <label class="col-md-2 control-label">Gender<span class="text-danger">*</span></label>
+                                        <div class="col-md-4">
+                                            @foreach (var gender in Enum.GetValues(typeof(vsk_betacent.Models.ViewModels.genderList)))
+                                            {
+                                                <label>
+                                                    <input asp-for="addStaff.int_gen" type="radio" value=" @((int)gender)" required />
+                                                    @gender
+                                                </label>
+                                            }
+                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 control-label">Upload Photo</label>
+                                        <div class="col-md-4">
+                                            @Html.EditorFor(s=>s.profilePic, new{ htmlAttributes = new { @class = "form-control ", @type = "file", @accept = ".png, .jpg, .jpeg" ,@name="file",@id="file"}})
+                                        </div>
+                                        <label class="col-md-2 control-label">Address</label>
+                                        <div class="col-md-4">
+                                            @Html.TextAreaFor(s => s.addStaff.txt_address, new { @class = "form-control", @placeholder = "Address" })
+                                           
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <div class="col-md-12 text-center">
+                                            <input type="submit" value="Submit" id="btnUpdateSignature" class="btn btn-primary waves-effect waves-light btn-sm">
+                                            <input type="reset" value="Reset" class="btn btn-danger  waves-effect waves-light btn-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--/col-->
+                </div>
+                <!--/Row-->
+            </section>
+        }
+    </div>
+</div>
+
+<!-- End of Main content Wrapper
+============================================== -->
+
+

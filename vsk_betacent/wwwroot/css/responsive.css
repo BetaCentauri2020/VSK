@@ -1,0 +1,1053 @@
+@media screen and (max-width: 1920px) {
+    .single-daily-status .card-body {
+        min-height: 205px !important;
+    }
+
+    .client-review .card-body .single-review .img {
+        margin-right: 0;
+        width: 65px;
+    }
+
+    .home-2 .single-daily-status .card-body {
+        min-height: 133px !important;
+    }
+    .ation-contact-area .card .card-body {
+        min-height: 520px;
+    }
+    .mail-right .card-body {
+        min-height: 830px;
+    }
+    .single-daily-status.daily-status-widget .card-body {
+        min-height: 167px !important;
+    }
+    .map-area img{
+        width: 660px;
+    }
+    .home-2 .seals-area .recent-listing .single-list {
+        margin-bottom: 24px;
+    }
+    .mail-right.compose-right .card-body {
+        min-height: 845px;
+    }
+    .mail-compose .mail-left.read-mail-left .card-body {
+        min-height: 930px;
+    }
+    .chat-area .chat-right .card-body .chat-contect-list .single-chat-contact:not(:last-child) {
+        margin-bottom: 27px;
+    }
+    .ation-todo .card-body .single-todo:not(:last-child) {
+        margin-bottom: 33.8px;
+    }
+    .ation-auth-wrapper .ation-auth .signup-left {
+        left: -250px;
+    }
+
+}
+
+@media screen and (max-width: 1440px) {
+    .error-wrapper .error-inner .error-bottom {
+        margin-top: 0;
+        padding-top: 33px;
+    }
+
+    .single-daily-status .card-body {
+        min-height: 197px !important;
+    }
+
+    .social-media-card .single-social-media-card:not(:last-child) {
+        margin-bottom: 50px;
+    }
+    .error-wrapper .error-inner {
+        position: absolute;
+        width: 100%;
+        top: 60px;
+    }
+    .ation-contact-area .card .card-body {
+        min-height: 632px;
+    }
+    .ation-auth-wrapper .ation-auth .auth-form .auth-title {
+        margin-bottom: 20px;
+    }
+    .ation-auth-wrapper .ation-login .auth-form .auth-title {
+        padding: 30px 30px 15px;
+    }
+    .mail-compose .mail-left .card-body {
+        min-height: 1002px;
+    }
+    .map-area img {
+        width: 100%;
+        height: 652px;
+    }
+    .single-daily-status.daily-status-widget .card-body {
+        min-height: 168px !important;
+    }
+    .mail-right.compose-right .card-body {
+        min-height: 946px;
+    }
+    .ation-auth-wrapper .sign-up::before {
+        width: 600px;
+    }
+    .ation-auth-wrapper .ation-auth .signup-left {
+        left: -90px;
+    }
+}
+
+/*-------------- Start device screen 1366 --------------*/
+
+@media screen and (min-width: 1366px) {}
+
+
+/*-------------- Start device screen 1366 --------------*/
+
+@media screen and (max-width: 1366px) {
+    .single-daily-status .card-body {
+        min-height: 189px !important;
+    }
+    .ation-auth-wrapper .ation-auth::before {
+        width: 550px;
+    }
+
+    .signup-left {
+        left: -18%;
+    }
+
+    .home-2 .recent-order-list .table tbody tr td .btn {
+        padding: 5px;
+    }
+    .error-wrapper .error-inner {
+        top: 40px;
+    }
+    .single-daily-status.daily-status-widget .card-body {
+        min-height: 164px !important;
+    }
+    .single-daily-status.daily-status-widget .card-body {
+        min-height: 165px !important;
+    }
+    .home-2 .seals-area .recent-listing .single-list {
+        margin-bottom: 8px;
+    }
+    .mail-compose .mail-left .card-body {
+        min-height: 1065px;
+    }
+    .mail-right.compose-right .card-body {
+        min-height: 1010px;
+    }
+    .mail-compose .mail-left.read-mail-left .card-body {
+        min-height: 1030px;
+    }
+    .ation-contact-area .card .card-body {
+        min-height: 645px;
+    }
+}
+
+/*-------------- Start device screen 1024 --------------*/
+
+@media screen and (max-width: 1024px) {
+    .ation-coming-soon .ation-coming-soon-inner .coming-soon-content-left {
+        padding: 0;
+    }
+
+    .ation-coming-soon .ation-coming-soon-inner .coming-soon-content-right {
+        padding: 0;
+    }
+
+    .ation-contact-area .all-contact {
+        width: 50%;
+    }
+
+    .ation-contact-area .contact-sort-list {
+        width: 50%;
+    }
+
+    .ation-contact-area .card {
+        margin-bottom: 30px;
+    }
+
+    .ation-contact-area .card .card-body {
+        min-height: 646px;
+    }
+
+    header .content-center .wather-info ul li .number {
+        font-size: 16px;
+    }
+
+    header .content-center .wather-info ul li .cel {
+        font-size: 16px;
+    }
+
+    header .content-right ul li button .flag img {
+        height: 18px;
+        width: 18px;
+    }
+
+    header .content-right ul li button .flag {
+        font-size: 14px;
+    }
+
+    header .content-center .wather-info ul li {
+        font-size: 12px;
+    }
+
+    .ation-alert {
+        font-size: 16px;
+    }
+
+    .ation-alert .alert-subs-btn {
+        position: static;
+        margin-top: 40px;
+    }
+
+    .ation-alert .close {
+        right: 60%;
+        top: 109px;
+    }
+
+    .calender .events .event-add-btn,
+    .calender .events ul li {
+        width: 100%;
+    }
+
+    .profile-user-option {
+        padding-left: 0px;
+        position: relative;
+        z-index: 9;
+        bottom: -110px;
+    }
+
+    .profile-area .profile-area-right ul {
+        bottom: 0;
+        left: 120px;
+    }
+
+    .profile-area {
+        margin-top: -340px;
+    }
+
+    .profile-area .profile-area-right {
+        position: absolute;
+        left: 160px;
+        bottom: -20px;
+    }
+
+    .post-content {
+        padding-top: 150px;
+    }
+
+    .profile-user-option ul {
+        flex-wrap: wrap;
+    }
+
+    .ation-coming-soon .ation-coming-soon-inner .coming-soon-content-left h2 {
+        font-size: 34px;
+        margin-bottom: 15px;
+    }
+
+    .is-countdown .countdown-row .countdown-section:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    .ation-auth-wrapper .ation-auth::before {
+        width: 490px;
+    }
+
+    .ation-auth-wrapper .ation-auth .auth-form .sign-up-title h3 {
+        font-size: 28px;
+    }
+
+    .ation-auth-wrapper .ation-auth .auth-form .form-control {
+        height: 48px;
+    }
+
+    .ation-auth-wrapper .ation-auth .signup-left {
+        left: -30px;
+    }
+
+    .single-list:not(:last-child) {
+        padding-bottom: 19px;
+        margin-bottom: 19px;
+    }
+
+    .project-ofthe-month .table td .team-lead .img {
+        margin-right: 10px;
+        width: 60px;
+    }
+
+    .single-list .left .content p {
+        font-size: 14px;
+    }
+
+    .single-list .left .content span {
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .social-media-card .single-social-media-card:not(:last-child) {
+        margin-bottom: 29px;
+    }
+
+    .error-wrapper .error-inner {
+        top: 25px;
+    }
+    .error-wrapper .error-inner .error-bottom p {
+        font-size: 14px;
+    }
+    .error-wrapper .error-inner h4 {
+        font-size: 28px;
+    }
+    .error-wrapper .error-inner p {
+        font-size: 15px;
+    }
+    .error-wrapper .error-inner .error-bottom {
+        padding-top: 40px;
+    }
+    .error-wrapper .error-inner {
+        top: 40px;
+    }
+    .error-wrapper .error-inner .error-bottom {
+        margin-top: 20px;
+    }
+    .ation-auth-wrapper .ation-auth .auth-form .auth-title {
+        margin-bottom: 0;
+    }
+    .ation-auth-wrapper .ation-login .auth-form .auth-title {
+        padding: 10px 30px 15px;
+    }
+    .single-daily-status.daily-status-widget .card-body {
+        min-height: 169px !important;
+    }
+    .author-widget .card-body {
+        min-height: 440px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .top-author .card-body {
+        min-height: 397px;
+    }
+    .home-2 .seals-area .recent-listing .bottom-footer-area {
+        display: table;
+        text-align: center;
+        margin: auto;
+    }
+    .home-2 .seals-area .recent-listing .bottom-footer-area p{
+        margin-bottom: 10px;
+    }
+    .mail-compose .mail-left .card-body {
+        min-height: 1570px;
+    }
+    .mail-compose .mail-left.compose-left .card-body {
+        min-height: 1065px;
+    }
+    .mail-compose .mail-left.read-mail-left .card-body {
+        min-height: 1154px;
+    }
+    .chat-area .chat-right .card-body .chat-contect-list .single-chat-contact:not(:last-child) {
+        margin-bottom: 33px;
+    }
+    .ation-todo .card-body .single-todo:not(:last-child) {
+        margin-bottom: 10.4px;
+    }
+
+
+}
+
+/*-------------- Start device screen 991 --------------*/
+
+@media screen and (max-width: 991px) {
+    .ation-coming-soon::before {
+        width: 100%;
+        height: 40%;
+        top: auto;
+        bottom: 0;
+    }
+
+    .ation-coming-soon::after {
+        width: 100%;
+        height: 40%;
+        top: auto;
+        right: 0;
+        bottom: 0;
+    }
+
+    .ation-coming-soon .ation-coming-soon-inner .coming-soon-content-left {
+        padding: 50px 0;
+    }
+
+    .ation-coming-soon .ation-coming-soon-inner .coming-soon-content-right {
+        padding: 150px 0 50px;
+    }
+
+    .ation-sidebar {
+        z-index: 9;
+        left: -270px;
+    }
+
+    .ation-sidebar-hide {
+        left: 0 !important;
+    }
+
+    footer,
+    .content-wrapper {
+        margin-left: 0;
+    }
+
+    .ation-contact-area .card .card-body {
+        min-height: 520px;
+    }
+
+    .ation-contact-area .all-contact .card-body .add-list {
+        min-width: 90%;
+    }
+
+    .ation-widgets-statistics ul li .card .card-body .content h4 {
+        font-size: 16px;
+    }
+
+    #most-sale-chart {
+        height: 182px;
+    }
+
+
+    .top-bar-2 .top-header-2 .top-bar-inner .search-form-2 {
+        border-bottom: 1px solid #f3f3f3;
+    }
+
+    .profile-auth img {
+        height: 40px;
+        width: 40px;
+    }
+
+
+    .home-2 .worldwide-customers .legend-list {
+        margin: initial;
+    }
+
+    .home-2 .worldwide-customers .legend-list ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .home-2 .worldwide-customers .legend-list ul li {
+        font-size: 12px;
+    }
+
+    .home-2 .worldwide-customers .legend-list ul li:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+
+    .home-2 .worldwide-customers .legend-list ul li .circle {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+    }
+
+    .content-right {
+        margin-top: 15px;
+    }
+
+    header {
+        min-height: 120px;
+    }
+
+    .content-wrapper {
+        margin-top: 150px;
+    }
+
+    .ation-alert .alert-subs-btn {
+        position: absolute;
+        margin-top: 0;
+    }
+
+    .ation-alert .close {
+        right: 30px;
+        top: 50%;
+    }
+
+    .mail-compose .mail-left .card-body {
+        min-height: 780px;
+    }
+
+    .mail-compose .mail-left .card-body .more-option ul {
+        justify-content: flex-start;
+    }
+
+    .mail-right .card-header .inbox-header-btns .btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .post-card .video-post img {
+        width: 100%;
+    }
+
+    .post-card .number-post img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: bottom;
+    }
+
+    .post-right .post-card .post-2 .post {
+        margin-top: 30px;
+    }
+
+    .post-right .post-card .post-2 .post img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .post-card .post-3 .card-body img {
+        width: 100%;
+    }
+
+    .profile-banner img {
+        width: 100%;
+    }
+
+    .ation-auth-wrapper .ation-auth::before {
+        display: none;
+    }
+
+    .ation-auth-wrapper .ation-auth .signup-left {
+        position: static;
+        transform: translateY(0);
+        margin-top: 30px;
+    }
+
+    .ation-auth-wrapper .ation-auth .signup-left .signup-logo {
+        border-bottom: 1px solid #d8d8d8;
+    }
+
+    .top-author .card-body {
+        min-height: 450px;
+    }
+
+    .content-wrapper-2 {
+        margin-top: -140px !important;
+    }
+
+    .home-2 .worldwide-customers #worldwide-customer {
+        height: 365px;
+    }
+
+    .home-2 .ation-sidebar {
+        padding-top: 0;
+        z-index: 999999;
+    }
+    .home-2 .ation-sidebar .menu-close{
+        display: block;
+    }
+
+    .most-sale-chart-widget #most-sale-chart{
+        height: 410px;
+    }
+    .map-area img {
+        width: auto;
+    }
+    .single-daily-status .card-body {
+        min-height: 197px !important;
+    }
+    .home-2 .seals-area .recent-listing .bottom-footer-area {
+        display: flex;
+        margin-top: 10px;
+    }
+    .home-2 .seals-area .recent-listing .single-list {
+        margin-bottom: 15px;
+    }
+    .mail-compose .mail-left.compose-left .card-body {
+        min-height: 785px;
+    }
+    .ation-auth-wrapper .ation-auth .signup-left .signup-logo {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+
+
+}
+
+/*-------------- Start device screen 761 --------------*/
+
+@media screen and (max-width: 761px) {
+    .ation-contact-area .contact-sort-list,
+    .ation-contact-area .all-contact {
+        width: 100%;
+    }
+
+    .ation-widgets-statistics ul li .card .card-body {
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ation-widgets-statistics ul li .card .card-body .icon {
+        margin-bottom: 15px;
+        width: 70px;
+        height: 70px;
+    }
+
+
+}
+
+/*-------------- Start device screen 768 --------------*/
+
+@media screen and (max-width: 768px) {
+
+    .content-wrapper-expend .ation-contact-area .card .card-body,
+    .ation-contact-area .card .card-body {
+        min-height: 646px;
+    }
+
+    header.top-header-2 .content-right ul li button .flag img {
+        height: 20px;
+        width: 20px;
+    }
+
+    header .content-right ul li button .flag {
+        font-size: 12px;
+    }
+
+    header.top-header-2 .content-right ul li .profile-auth img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .top-bar-2 .top-header-2 .top-bar-inner {
+        padding: 10px;
+        margin-left: 20px;
+    }
+
+    .ation-alert {
+        font-size: 14px;
+        padding-left: 88px;
+    }
+
+    .ation-widgets-statistics ul li .card .card-body {
+        min-height: 220px;
+    }
+    .home-2 .worldwide-customers #worldwide-customer {
+        height: 348px;
+    }
+    .ation-auth-wrapper .sign-up::after {
+        width: 745px;
+    }
+
+
+}
+
+/*-------------- Start device screen 425 --------------*/
+
+@media screen and (max-width: 425px) {
+    .ation-contact-area .contact-sort-list .card-body .single-sort {
+        position: relative;
+    }
+
+    .ation-contact-area .contact-sort-list .card-body .single-sort ul li .contact-info-sort,
+    .ation-contact-area .contact-sort-list .card-body .single-sort ul {
+        display: block;
+        text-align: center;
+    }
+
+    .ation-contact-area .contact-sort-list .card-body .single-sort ul li .contact-info-sort .img {
+        margin: 0 auto 10px;
+    }
+
+    .ation-contact-area .contact-sort-list .card-body .single-sort ul li .icon {
+        position: absolute;
+        top: 22px;
+        right: 10px;
+    }
+
+    .ation-contact-area .contact-sort-list .card-body .single-sort ul li .contact-info-sort .content p {
+        margin: 8px 0;
+    }
+
+    .ation-widgets-statistics ul li {
+        width: 50%;
+        margin: 10px 0;
+    }
+
+    #most-sale-chart {
+        height: 360px;
+    }
+
+    .total-earnings li h6 {
+        font-size: 18px;
+    }
+
+    .total-earnings {
+        display: block;
+    }
+
+    .total-earnings li:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .top-bar-2 .top-header-2 .togler-2 {
+        left: 92%;
+    }
+
+    .top-bar-2 .top-header-2 .top-bar-inner {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    header .content-right ul {
+        justify-content: center;
+    }
+
+    header.top-header-2 .content-right ul li .profile-auth img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .top-bar-2 .top-header-2 .top-bar-inner .search-form-2 .form-control {
+        padding-right: 10px;
+    }
+
+    .top-bar-2 .top-header-2 .top-bar-inner .search-form-2 {
+        border-bottom: 1px solid #f3f3f3;
+    }
+
+    .top-bar-2 .top-header-2 {
+        padding: 15px 0;
+    }
+
+    .content-wrapper-2 {
+        margin-top: -63px !important;
+    }
+
+    .ation-statistics2 {
+        margin-top: 50px;
+    }
+
+    .home-2 .recent-order-list .bottom-footer-area,
+    .home-2 .seals-area .recent-listing .bottom-footer-area {
+        display: block;
+        text-align: center;
+    }
+
+    .home-2 .recent-order-list .bottom-footer-area .right .pagination,
+    .home-2 .seals-area .recent-listing .bottom-footer-area .right .pagination {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .ation-card .card-header h3 {
+        font-size: 16px;
+    }
+
+    .home-2 .worldwide-customers .card-header .icon ul li:not(:last-child) {
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+    }
+
+    header {
+        min-height: unset;
+        padding: 15px 0;
+    }
+
+    .content-right {
+        margin-top: 10px;
+    }
+
+    .content-wrapper {
+        margin-top: 240px;
+    }
+
+    header .content-center {
+        display: block;
+    }
+
+    header .content-center .search-form {
+        max-width: 100%;
+        margin-top: 15px;
+    }
+
+    header .content-center .wather-info ul {
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    header .content-center .menu-toggler {
+        position: absolute;
+        top: -20px;
+        right: 0;
+        margin-right: 15px;
+    }
+
+    header .logo img {
+        margin: unset;
+    }
+
+    .ation-sidebar {
+        z-index: 999999;
+    }
+
+    .ation-sidebar {
+        padding-top: 15px;
+    }
+
+    .page-breadcrumb ul {
+        justify-content: flex-start;
+        margin-top: 5px;
+    }
+
+    .ation-alert .alert-subs-btn {
+        position: absolute;
+        top: 100px;
+        left: 95px;
+    }
+
+    .alert-dismissible .close {
+        padding: 0.55rem 1.25rem;
+    }
+
+    .ation-alert .close {
+        right: 140px;
+        top: 65.5%;
+    }
+
+    .ation-alert {
+        padding: 30px 30px 80px;
+        padding-left: 100px;
+    }
+
+
+    .error-wrapper .error-inner img {
+        width: 300px;
+    }
+
+    .error-wrapper .error-inner .error-bottom {
+        height: 500px;
+        width: 600px;
+        padding-right: 110px;
+        padding-left: 110px;
+    }
+
+    .error-wrapper .error-inner {
+        position: relative;
+        top: -50px;
+    }
+
+    .mail-compose .mail-right .card-body .compose-form .form-bottom {
+        display: block;
+    }
+
+    .mail-compose .mail-right .card-body .compose-form .form-bottom .left {
+        margin-bottom: 15px;
+    }
+
+    .profile-area .profile-area-left {
+        display: block;
+        text-align: center;
+    }
+
+    .profile-area .profile-area-left .img {
+        bottom: 0;
+        margin: auto;
+    }
+
+    .profile-area {
+        margin-top: -450px;
+    }
+
+    .profile-area .profile-area-left .content {
+        bottom: -10px;
+    }
+
+    .profile-area .profile-area-right {
+        left: -130px;
+        bottom: -80px;
+    }
+
+    .profile-user-option ul li a {
+        padding: 20px 21px;
+    }
+
+    .profile-user-option ul li:last-child {
+        border-right: none;
+    }
+
+    .profile-banner img {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .cover-img img {
+        width: 100%;
+    }
+
+    .post-area .btn-load-more {
+        width: 100%;
+    }
+
+    .post-content .projects ul li {
+        width: 20%;
+    }
+
+    .ation-auth-wrapper .sign-up::after {
+        width: 100%;
+    }
+
+    .ation-auth-wrapper .ation-auth .auth-form .sign-up-title h3 {
+        font-size: 24px;
+    }
+
+    .ation-alert .btn {
+        font-size: 14px;
+    }
+    .ation-auth-wrapper .ation-login .auth-form .auth-title a {
+        margin-bottom: 15px;
+    }
+    .ation-auth-wrapper .ation-login .auth-form .auth-title h4 {
+        font-size: 14px;
+    }
+    .ation-auth-wrapper .ation-login .auth-form form {
+        padding: 15px;
+    }
+    .map-area img {
+        width: auto;
+        height: auto;
+    }
+
+
+
+}
+
+/*-------------- Start device screen 375 --------------*/
+
+@media screen and (max-width: 375px) {
+    .home-2 .seals-area .recent-listing .bottom-footer-area .right .pagination .page-item .page-link,
+    .home-2 .recent-order-list .bottom-footer-area .right .pagination .page-item .page-link {
+        height: 25px;
+        width: 25px;
+        line-height: 25px;
+        padding: 0;
+    }
+
+    .home-2 .recent-order-list .bottom-footer-area .left p,
+    .home-2 .seals-area .recent-listing .bottom-footer-area .left p {
+        font-size: 12px;
+    }
+
+    .single-list .left .content p {
+        font-size: 14px;
+    }
+
+    .single-list .left img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .home-2 .seals-area .recent-listing .single-list .card .card-body {
+        display: block;
+        padding: 15px;
+    }
+
+    .ation-alert .close {
+        right: 60px;
+    }
+
+    .ation-alert .alert-subs-btn {
+        top: 115px;
+        left: 98px;
+    }
+
+    .fc-toolbar .fc-left,
+    .fc-toolbar .fc-right {
+        float: none;
+    }
+
+    .cover-photo {
+        height: 580px;
+    }
+
+    .profile-area {
+        margin-top: -550px;
+    }
+
+    .profile-area .profile-area-left .img img {
+        height: 180px;
+        width: 180px;
+    }
+
+    .profile-area .profile-area-left .img {
+        height: 190px;
+        width: 190px;
+    }
+
+    .profile-area .profile-area-left .content h3 {
+        font-size: 22px;
+        margin-bottom: 3px;
+    }
+
+    .profile-area .profile-area-right ul li .btn {
+        width: 100px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 12px;
+    }
+
+    .profile-area .profile-area-right {
+        left: -100px;
+    }
+
+    .profile-area .profile-area-right {
+        left: -130px;
+    }
+
+    .invoice .card-body .invoice-top {
+        display: block;
+    }
+
+    .invoice-top .right {
+        position: absolute;
+        top: 60px;
+        left: 20px;
+    }
+
+    .invoice-top .left {
+        margin-top: 50px;
+    }
+
+
+}
+
+/*-------------- Start device screen 320 --------------*/
+
+@media screen and (max-width: 320px) {
+    .ation-widgets-statistics ul li {
+        width: 100%;
+    }
+
+    .ation-alert .close {
+        right: 20px;
+        top: 115px;
+    }
+
+    .error-wrapper .error-inner .error-bottom {
+        padding-right: 150px;
+        padding-left: 150px;
+    }
+
+    .error-wrapper .error-inner .error-bottom p {
+        font-size: 11px;
+    }
+
+    .ation-card .card-header h3 {
+        font-size: 12px;
+    }
+
+    header.top-header-2 .content-right ul li .profile-auth img {
+        height: 30px;
+        width: 40px;
+    }
+}

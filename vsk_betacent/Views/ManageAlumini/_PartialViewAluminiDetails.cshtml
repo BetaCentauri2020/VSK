@@ -1,0 +1,87 @@
+﻿@model vsk_betacent.Models.ViewModels.ManageAluminiViewModel
+ <!--============================================== -->
+<!-- Start Main content Wrapper
+============================================== -->
+
+    <!-- Start -->
+    <section class="ation-statistics">
+        <div class="row">
+            <div class="col-xl-12 col-md-12 col-12 mb-xl-0 mb-4">
+                <div class="card ation-card">
+                    <div class="card-header">
+                        <h3>Profile-@Model.alumini.name</h3>
+                        <img src="~/Resources/Images/@Model.alumini.file" alt="No Image" height="50px" width="50px" />
+                    </div>
+                    <div class="card-body">
+                        <div class="form-horizontal">
+                            <div class="form-group row">
+                                <label class="col-md-2 control-label">Name :</label>
+                                <div class="col-md-4">
+                                    @Html.DisplayFor(x => x.alumini.name, new { htmlAttributes = new { @class = "form-control"} })
+                                </div>
+                                <label class="col-md-2 control-label">Organisation :</label>
+                                <div class="col-md-4">
+                                    @Html.DisplayFor(x => x.alumini.organisation, new { htmlAttributes = new { @class = "form-control"} })
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-2 control-label">Profession :</label>
+                                <div class="col-md-4">
+                                        @Html.DisplayFor(x => x.alumini.profession, new { htmlAttributes = new { @class = "form-control"} })
+
+                                </div>
+                                <label class="col-md-2 control-label" for="example-email">Passout Year :</label>
+                                <div class="col-md-4">
+                                    @Html.DisplayFor(x => x.alumini.passout_year, new { htmlAttributes = new { @class = "form-control"} })
+                                    
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-2 control-label">Marital Status :</label>
+                                <div class="col-md-4">
+
+                                        @Html.DisplayFor(x => x.alumini.marital_status, new { htmlAttributes = new { @class = "form-control"} })
+
+                                </div>
+                                <label class="col-md-2 control-label">Email :</label>
+                                <div class="col-md-4">
+                                    @Html.DisplayFor(x => x.alumini.eamil, new { htmlAttributes = new { @class = "form-control"} })
+                                    
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-2 control-label">DOB :</label>
+                                <div class="col-md-4">
+                                    @Convert.ToDateTime(Model.alumini.dob).ToString("dd/MM/yyyy")
+                                </div>
+                                <label class="col-md-2 control-label">Mobile :</label>
+                                <div class="col-md-4">
+                                    @Html.DisplayFor(x => x.alumini.mobile, new { htmlAttributes = new { @class = "form-control"} })
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-md-2 control-label">Address :</label>
+                                <div class="col-md-4">
+                                    @Html.DisplayFor(x => x.alumini.address, new { htmlAttributes = new { @class = "form-control"} })
+
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--/col-->
+        </div>
+        <!--/Row-->
+    </section>
+
+
+<!-- End of Main content Wrapper
+============================================== -->
+
+

@@ -1,0 +1,126 @@
+﻿
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <title>Vivekananda Shiksha Kendra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Icare - Nonprofit, Fundraising HTML Template">
+    <meta name="author" content="Esmeth">
+    <meta charset="UTF-8">
+
+    <!-- CSS Bootstrap & Custom -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="~/css/animate.css" rel="stylesheet" media="screen">
+    <link href="~/style.css" rel="stylesheet" media="screen">
+    <link href="~/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="images/ico/favicon.png">
+
+    <!-- JavaScripts -->
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/min/modernizr.min.js"></script>
+    <script src="~/js/slick.js"></script>
+     <!-- datatable style -->
+    <link rel='stylesheet' href='~/css/dataTables.bootstrap.css'>
+    <link rel='stylesheet' href='~/css/dataTables.responsive.css'>
+    <!--[if lt IE 8]>
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" alt="" /></a>
+    </div>
+    <![endif]-->
+</head>
+<body>
+    <partial name="~/Views/Home/_PartialLogIn.cshtml" />
+    <div class="container">
+        @RenderBody()
+    </div>
+    <partial name="~/Views/Home/_PartialFooter.cshtml" />
+    <a href="#top" id="top-link" class="fa fa-angle-up"></a>
+    
+    <!-- Alert Messages -->
+    <!-- Modal Error -->
+    <div class="modal fade" id="modalError" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body bg-danger text-white">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="perror"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Success -->
+    <div class="modal fade" id="modalSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body bg-success text-white">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="psuccess"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal warning -->
+    <div class="modal fade" id="modalWarning" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body bg-warning text-dark">
+                    <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="pwarning"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Info -->
+    <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body bg-info text-white">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="pinfo"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Alert-->
+    
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/min/plugins.min.js"></script>
+    <script src="~/js/min/custom.min.js"></script>
+    <script src="~/js/bootstrap-datepicker.min.js"></script>
+    <script src='~/assets/js/jquery.dataTables.min.js'></script>
+    <script src='~/assets/js/dataTables.bootstrap.js'></script>
+    <script src='~/assets/js/dataTables.responsive.js'></script>
+    <script src='~/assets/js/custom.js'></script>
+    <script type="text/javascript">
+        $('#datepicker').datepicker({
+            weekStart: 1,
+            daysOfWeekHighlighted: "6,0",
+            autoclose: true,
+            todayHighlight: true,
+        });
+        $('#datepicker').datepicker("setDate", new Date());
+        
+        
+    </script>
+     @RenderSection("Scripts", required: false)
+</body>
+
+</html>

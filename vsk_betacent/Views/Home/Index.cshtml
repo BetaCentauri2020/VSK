@@ -1,0 +1,390 @@
+﻿@model vsk_betacent.Models.ViewModels.ManageHomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <title>Vivekananda Shiksha Kendra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Icare - Nonprofit, Fundraising HTML Template">
+    <meta name="author" content="Esmeth">
+    <meta charset="UTF-8">
+
+    <!-- CSS Bootstrap & Custom -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="~/css/animate.css" rel="stylesheet" media="screen">
+    <link href="~/style.css" rel="stylesheet" media="screen">
+    <link href="~/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="images/ico/favicon.png">
+
+    <!-- JavaScripts -->
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/min/modernizr.min.js"></script>
+    <script src="~/js/slick.js"></script>
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+    <!--[if lt IE 8]>
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" alt="" /></a>
+    </div>
+    <![endif]-->
+</head>
+<body>
+    <partial name="~/Views/Home/_PartialLogIn.cshtml" />
+    <div class="container">
+        <div class="custom-white">
+
+            <div class="top-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="u-cause-wrapper">
+                            <span class="u-cause-title">
+                                <a href="#" class="close-u-cause">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                                Notice
+                            </span>
+                            <div class="u-cause clearfix">
+                                <dl class="inner-carousel clearfix">
+                                    @foreach (var item in Model.noticeList)
+                                    {
+                                        <dt></dt>
+                                        <dd><a href="#">@item.txt_description</a></dd>
+
+                                    }
+                                    @* <dt></dt>
+                                    <dd><a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</a></dd>
+                                    <dt></dt>
+                                    <dd><a href="#">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</a></dd>
+                                    <dt></dt>
+                                    <dd><a href="#">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections</a></dd>
+                                    <dt></dt>
+                                    <dd><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</a></dd>
+                                    <dt></dt>
+                                    <dd><a href="#">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</a></dd> *@
+                                </dl> <!-- /.inner-carousel -->
+                            </div> <!-- /.u-cause -->
+                        </div> <!-- /.u-cause-wrapper -->
+                    </div> <!-- /.col-md-12 -->
+                </div> <!-- /.row -->
+
+                <div class="slider-wrapper">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="flexslider">
+                                <ul class="slides">
+                                    <li>
+                                        <img src="~/images/placehold/slides/slide1.jpg" alt="">
+                                        <div class="flex-caption">
+                                            <p>Vivekananda Shiksha Kendra</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/placehold/slides/slide2.jpg" alt="">
+                                        <div class="flex-caption">
+                                            <p>Vivekananda Shiksha Kendra</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/placehold/slides/slide3.jpg" alt="">
+                                        <div class="flex-caption">
+                                            <p>Vivekananda Shiksha Kendra</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="~/images/placehold/slides/slide4.jpg" alt="">
+                                        <div class="flex-caption">
+                                            <p>Vivekananda Shiksha Kendra</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div> <!-- /.flexslider -->
+                        </div> <!-- /.col-md-8 -->
+                        
+                            <div class="col-md-4">
+                                <div class="subscribe-form">
+                                    <h3 class="widget-title">Admission Inquiry Form</h3>
+                                    <!--<p>Sign up today for our e-newsletter to find out what is going on and get involved.</p>-->
+                                    @Html.AntiForgeryToken()
+                                    @using (Html.BeginForm("AddInquary","ManageInquary",FormMethod.Post))
+                                    {
+                                        <fieldset>
+                                             @Html.EditorFor(x => x.inquary.name, new { htmlAttributes = new { @class = "form-input", @placeholder = "Name", @required = true} })
+                                        </fieldset>
+                                        <fieldset>
+                                            @Html.DropDownListFor(x => x.inquary.course, new List<SelectListItem>
+                                            {
+                                            new SelectListItem { Text = "All" , Value = "All"},
+                                            new SelectListItem{ Text = "Primary" , Value = "Primary" },
+                                            new SelectListItem { Text = "Secondary" , Value = "Secondary" } ,
+                                            new SelectListItem { Text = "Others" , Value = "Others" } 
+                                             },"--Select--",
+                                            new { @id = "ddlquery", @class = "form-control",@required="required" })
+                                        </fieldset>
+                                        <fieldset>
+                                            @Html.EditorFor(x => x.inquary.email, new { htmlAttributes = new { @class = "form-input", @placeholder = "Email ID", @required = true,@type="email"} })
+                                        </fieldset>
+                                        <fieldset>
+                                            @Html.EditorFor(x => x.inquary.Contact_no, new { htmlAttributes = new { @class = "form-input", @placeholder = "Contact Number", @required = true} })
+                                        </fieldset>
+                                        <fieldset>
+                                            @Html.EditorFor(x => x.inquary.query, new { htmlAttributes = new { @class = "form-input", @placeholder = "Query", @required = true,@rows="4"} })
+                                        </fieldset>
+                                        <fieldset class="text-center">
+                                            <input type="submit" id="send-button" class="btn main-btn" value="Submit">
+                                        </fieldset>
+                                    }
+                                </div> <!-- /.subscribe-form -->
+                            </div> <!-- /.col-md-4 -->
+                    </div> <!-- /.row -->
+                </div> <!-- /.slider-wrapper -->
+            </div> <!-- /.top-content -->
+
+            <div class="services box-content">
+                <div class="row">
+                    <div class="col-md-12 services-header">
+                        <h5 class="widget-title">Welcome to Vivekananda Shiksha Kendra</h5>
+                        <span></span>
+                        <p style="text-align: justify;">Our institution Vivekananda Shiksha Kendra was established on the auspicious day of Rathyatra(23rd june, 1982) and from then we are working towards imparting spiritual, educational development and character building of child. The school is housed in a magnificent building with well-equipped laboratories, library and computer lab. We are soon going to introduce our smart-class programs. The school has strength of about 1000 students and 40 teaching and teaching staffs. The school follows the courses and syllabus of Board of Secondary Education, Odisha and runs classes from Nursery to class-10th medium of instruction is odia. But English is taught from preprimary classes , Hindi from class-iii and Sanskrit from class-vii and computer from class - v.</p>
+                    </div> <!-- /.services-header -->
+                </div> <!-- /.row -->
+            </div> <!-- /.services -->
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="box-content">
+                        <h4 class="widget-title"><span>A Little About Us</span></h4>
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1" data-toggle="tab">Our History</a></li>
+                            <li><a href="#tab2" data-toggle="tab">Mission & Vision</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab1">
+                                <p><img src="~/images/placehold/about/history.jpg" class="img-thumbnail img-float">Vivekananda Shiksha Kendra started her journey on 23 rd June, 1982.It is a leading
+                            private School in the state of Odisha, recognized by Government of Odisha. It
+                            imparts quality teaching from Nursery to Class 10 as per Board of Secondary
+                            prescribed syllabus. In her long journey of almost four decades, it has shaped
+                            future of thousands of students who are now established in their professions both
+                            in India and abroad.</p>
+                                <a href='@Url.Action("AboutHistory","Home")'>View More &nbsp;<i class="fa fa-caret-right"></i></a>
+                            </div>
+                            <div class="tab-pane" id="tab2">
+                                <p><img src="~/images/placehold/about/mission-vision.jpg" class="img-thumbnail img-float"></p>
+                                <div class="archives2">
+                                    <ul>
+                                        <li>Mission To shape and sharpen minds of students to enable the face the world with confidence.</li>
+                                        <li>Vision To guide students in a way that they can bring glory for the nation in all aspects of life.</li>
+                                        <li>Our mission is to follow a National education policy through which a generation of youth could beproduced which is infused with patriotic fervor and Hindusim which is physically, mentally, intellectually and spiritually fully developed and which can successfully meet the present challenges of life and which is committed to well harmonize , enrich and refine national life by setting the downtrodden, deprived brethren dwelling in the society.</li>
+                                    </ul>
+                                    <a href='@Url.Action("AboutMV","Home")'>View More &nbsp;<i class="fa fa-caret-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- /.box-content -->
+                </div> <!-- /.col-md-8 -->
+                <div class="col-md-4">
+                    <div class="box-content">
+                        <h4 class="widget-title"><span>News Update</span></h4>
+                        <div class="events-sidebar">
+                            <marquee style="overflow:hidden;min-height:280px" onmouseout="this.start();" onmouseover="this.stop();" direction="up" scrollamount="2">
+                                <ul>
+                                    @foreach (var item in Model.noticeList)
+                                    {
+                                         <li class="event-item">
+                                            <div class="event-content">
+                                                <h5 class="event-title"><a href="#"><i class="fa fa-folder-open">&nbsp;</i>@item.txt_title</a></h5>
+                                                <p class="event-meta">@item.txt_description</p>
+                                                <p class="event-meta">@item.dt_dou.ToString("dd/MMM/yyyy")</p>
+                                            </div>
+                                        </li>
+                                    }
+                                </ul>
+                            </marquee>
+                        </div> <!-- /.events-sidebar -->
+                    </div> <!-- /.box-content -->
+                </div> <!-- /.col-md-4 -->
+            </div> <!-- /.row -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="widget-title"><span>Our Messages</span></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 testimonials-wrapper">
+                                <ul class="testi-tabs clearfix">
+                                    <li class="active">
+                                        <a href="#testi-content-01">
+                                            <img src="images/placehold/testimonials/testi1.jpg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#testi-content-02">
+                                            <img src="images/placehold/testimonials/testi2.jpg" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="testi-wrapper">
+                                    <div id="testi-content-01" class="testi-content active">
+                                        <div class="testi-author">
+                                            <h6><span>Swami Vivekanand</span></h6>
+                                        </div>
+                                        <p>Where can we go to find God if we cannot see him in our own hearts and in every living being.</p>
+                                    </div>
+                                    <div id="testi-content-02" class="testi-content">
+                                        <div class="testi-author">
+                                            <h6><span>Pradhan Acharya</span></h6>
+                                        </div>
+                                        <p>It gives me an immense pleasure to express my gratitude to all who love our esteemed institution. Our institution has been established in the year 1982 on the auspicious date of Ratha Yatra to impart quality education. Emphasis is being given on spiritual, mental and physical education to enable students to become good citizens of India. We worship education, spread sense of fraternity, show patriotism and deeply trust in character building. The school has been recognized by state Govt. and affiliated to Board Of Secondary Education Odisha . The students are appearing the Annual H.S.C Examination directly from the year 1993. Our students have also bagged to ten ranks in the H.S.C. examination during the year 2005, 2007, 2008, 2009. Apart from this the students are of class – iii, v primary and class – vii NR 15 scholarships. Our experienced staff are trying their level best to bring name and fame to school.</p>
+                                    </div>
+                                </div> <!-- //.testi-wrapper -->
+                            </div> <!-- /.col-md-12 -->
+                        </div> <!-- /.row -->
+                    </div> <!-- /.box-content -->
+                </div>
+            </div> <!-- /.row -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box-content">
+                        <h4 class="widget-title"><span>Our Gallery</span></h4>
+                        <section class="customer-logos slider">
+                            <div class="slide"><a href="~/images/placehold/gallery/1.jpg" class="fancybox" data-fancybox-group="group3"><img src="~/images/placehold/gallery/1.jpg"></a></div>
+                            <div class="slide"><a href="~/images/placehold/gallery/2.jpg" class="fancybox" data-fancybox-group="group3"><img src="~/images/placehold/gallery/2.jpg"></a></div>
+                            <div class="slide"><a href="~/images/placehold/gallery/3.jpg" class="fancybox" data-fancybox-group="group3"><img src="~/images/placehold/gallery/3.jpg"></a></div>
+                            <div class="slide"><a href="~/images/placehold/gallery/4.jpg" class="fancybox" data-fancybox-group="group3"><img src="~/images/placehold/gallery/4.jpg"></a></div>
+                            <div class="slide"><a href="~/images/placehold/gallery/5.jpg" class="fancybox" data-fancybox-group="group3"><img src="~/images/placehold/gallery/5.jpg"></a></div>
+                            <div class="slide"><a href="~/images/placehold/gallery/6.jpg" class="fancybox" data-fancybox-group="group3"><img src="~/images/placehold/gallery/6.jpg"></a></div>
+                            <div class="slide"><a href="~/images/placehold/gallery/7.jpg" class="fancybox" data-fancybox-group="group3"><img src="~/images/placehold/gallery/7.jpg"></a></div>
+                        </section>
+                    </div> <!-- /.box-content -->
+                </div>
+            </div> <!-- /.row -->
+
+        </div>
+    </div> <!-- /.container -->
+    <partial name="~/Views/Home/_PartialFooter.cshtml" />
+    <a href="#top" id="top-link" class="fa fa-angle-up"></a>
+    <!-- Alert Messages -->
+    <!-- Modal Error -->
+    <div class="modal fade" id="modalError" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body bg-danger text-white">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="perror"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Success -->
+    <div class="modal fade" id="modalSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body bg-success text-white">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="psuccess"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal warning -->
+    <div class="modal fade" id="modalWarning" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body bg-warning text-dark">
+                    <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="pwarning"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Info -->
+    <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body bg-info text-white">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="pinfo"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Alert-->
+    @if (TempData["query"] != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert('@TempData["query"].ToString()');
+            };
+        </script>
+    }
+    <!-- JavaScripts -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/min/plugins.min.js"></script>
+    <script src="~/js/min/custom.min.js"></script>
+    <script src="~/js/bootstrap-datepicker.min.js"></script>
+    <script src='~/assets/js/custom.js'></script>
+    <script type="text/javascript">
+        $('#datepicker').datepicker({
+            weekStart: 1,
+            daysOfWeekHighlighted: "6,0",
+            autoclose: true,
+            todayHighlight: true,
+        });
+        $('#datepicker').datepicker("setDate", new Date());
+        DynamicNotify(parseInt(getUrlParameter('type')),getUrlParameter('msg'));
+        $(document).ready(function () {
+            $('.customer-logos').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1500,
+                arrows: false,
+                dots: false,
+                pauseOnHover: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }, {
+                    breakpoint: 520,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                }]
+            });
+        });
+    </script>
+
+</body>
+
+</html>

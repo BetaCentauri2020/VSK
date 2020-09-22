@@ -1,0 +1,225 @@
+﻿@model vsk_betacent.Models.ViewModels.ManageHomeViewModel
+@{ Layout = "_Layout"; }
+   
+    ============================================== -->
+    <!-- Start Main content Wrapper
+    ============================================== -->
+
+    <div class="content-wrapper">
+        <div class="container-fluid">
+
+            <!-- Breadcrumb -->
+            <div class="page-breadcrumb">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h4>Dashboard</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li><a href="index.html">Dashboard</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /Breadcrumb -->
+            <!-- Statistics -->
+            <section class="ation-statistics">
+                <div class="row">
+
+                    <div class="col-xl-4 col-md-6 col-12 mb-xl-0 mb-4">
+                        <div class="single-statistics">
+                            <div class="card ation-card">
+                                <div class="card-header bg-primary">
+                                    <h3 class="text-white">Inquiry</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="content">
+                                        <div class="left">
+                                            <h3 class="text-primary">@Model.totalInquiry</h3>
+                                        </div>
+                                        <div class="right">
+                                            <span class="circle"></span>
+                                            <img src="~/assets/images/icon-feedback.png">
+                                        </div>
+                                    </div><!-- /content -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--/single-statistics-->
+                    </div>
+                    <!--/col-->
+
+                    <div class="col-xl-4 col-md-6 col-12 mb-md-0 mb-4">
+                        <div class="single-statistics">
+                            <div class="card ation-card">
+                                <div class="card-header bg-success">
+                                    <h3 class="text-white">Total Staff</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="content">
+                                        <div class="left">
+                                            <h3 class="text-success">@Model.totalStaff</h3>
+                                        </div>
+                                        <div class="right">
+                                            <span class="circle"></span>
+                                            <img src="~/assets/images/icon-staff.png">
+                                        </div>
+                                    </div><!-- /content -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--/single-statistics-->
+                    </div>
+                    <!--/col-->
+
+                    <div class="col-xl-4 col-md-6 col-12">
+                        <div class="single-statistics">
+                            <div class="card ation-card">
+                                <div class="card-header bg-warning">
+                                    <h3 class="text-white">Alumni</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="content">
+                                        <div class="left">
+                                            <h3 class="text-warning">@Model.totalAlumini</h3>
+                                        </div>
+                                        <div class="right">
+                                            <span class="circle"></span>
+                                            <img src="~/assets/images/icon-alumni.png">
+                                        </div>
+                                    </div><!-- /content -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--/single-statistics-->
+                    </div>
+                    <!--/col-->
+
+                </div>
+                <!--/Row-->
+            </section>
+            <!-- /Statistics -->
+            <!--  project-status-area -->
+            @* <div class="project-status-area">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-6 col-12 mb-lg-0 mb-4">
+                        <div class="growth-summary">
+                            <div class="card ation-card">
+                                <div aria-controls="ation-card-collapse1" aria-expanded="false" class="card-header"
+                                     data-target="#ation-card-collapse1" data-toggle="collapse" role="button">
+                                    <h3>Progress Chart</h3>
+                                    <div class="icon">
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                </div><!-- /card header -->
+                                <div class="card-body collapse show" id="ation-card-collapse1">
+                                    <div id="growth-summary" style="height: 350px;"></div>
+                                </div>
+                            </div>
+                        </div><!-- /growth summary -->
+                    </div><!-- / col -->
+
+                    <div class="col-lg-6 col-md-6 col-12 mb-lg-0 mb-4">
+                        <div class="project-status">
+                            <div class="card ation-card">
+                                <div aria-controls="ation-card-collapse2" aria-expanded="false" class="card-header"
+                                     data-target="#ation-card-collapse2" data-toggle="collapse" role="button">
+                                    <h3>Expenditure</h3>
+                                    <div class="icon">
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                </div><!-- /card header -->
+                                <div class="card-body collapse show" id="ation-card-collapse2">
+
+                                    <div id="chartdiv1" style="height: 350px;"></div>
+
+                                </div>
+                            </div>
+                        </div><!-- /project-status -->
+                    </div><!-- / col -->
+
+                </div><!-- / Row -->
+            </div> *@
+            <!-- / project-status-area -->
+            <!-- project of the month -->
+            <section class="project-ofthe-month sec-pt">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card ation-card">
+                            <div class="card-header">
+                                <h3>Alumini Details</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>Action</th>
+                                                <th>Name</th>
+                                                <th>Organization</th>
+                                                <th>Profession</th>
+                                                <th>Passout Year</th>
+                                                <th>Marital Status</th>
+                                                <th>Email</th>
+                                                <th>DOB</th>
+                                                <th>Mobile No.</th>
+                                                <th>Address</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.aluminiList)
+                                            {
+                                            <tr>
+                                                <td>
+                                                   <a class='btn btn-sm btn-info btn-xs waves-effect waves-light' href="@Url.Action("approve_alumini","Vsk_admin",new {regno=item.registration_number })">Approve</a>
+                                                </td>
+                                                <td>
+                                                    @item.name
+                                                </td>
+                                                <td>
+                                                    @item.organisation
+                                                </td>
+                                                <td>
+                                                   @item.profession
+                                                </td>
+                                                <td>
+                                                    @item.passout_year
+                                                </td>
+                                                <td>
+                                                    @item.marital_status
+                                                </td>
+                                                <td>
+                                                    <span>@item.eamil</span>
+                                                </td>
+                                                <td>
+                                                    @Convert.ToDateTime(item.dob).ToString("dd/MM/yyyy")
+                                                </td>
+                                                <td>
+                                                    @item.mobile
+                                                </td>
+                                                <td>
+                                                    @item.address
+                                                </td>
+                                               
+                                            </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- /project of the month -->
+            <!-- /section -->
+
+        </div>
+    </div>
+
+    <!-- End of Main content Wrapper
+    ============================================== -->
+
+

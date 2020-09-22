@@ -1,0 +1,264 @@
+
+@import "css/main.css";
+
+/****************************************** MY STYLE *****************************************/
+table{
+	width:100%;
+	font-size:12px;
+}
+table th{
+	background-color:#666;
+	padding:8px 7px;
+	border:1px solid #C7DFEA;
+	color:#fff;
+	font-size:14px;
+}
+table td{
+	padding:4px 7px;
+	border:1px solid #EAEAEA;
+}
+table tbody tr:nth-child(1n){
+	/*background-color:#F4F9EA;*/
+	background-color:#fff;
+}
+table tbody tr:nth-child(2n){
+	/*background-color:#FFF9F9;*/
+	background-color:#f5f5f5;
+}
+img.tpfac
+{
+	background-color: #fff;
+    border: 1px solid #dadada;
+    box-shadow: 0 0 5px #ccc;
+    float: left;
+    margin: 0 15px 0 0;
+    padding: 5px;
+}
+
+.nav-tabs-justified{
+	margin:0px;
+}
+.nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:hover,.nav-tabs-justified>.active>a:focus{
+	background-color:#de0d1f;
+	color:#fff;
+	border-left:5px solid #333;
+}
+.nav-tabs-justified > li > a{
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+}
+.nav-tabs-justified > li > a:first-child{
+	border-top:1px solid #ddd;
+	font-weight:600;
+}
+.img-float{
+	margin:0 0 10px 20px;
+	float:right;
+	width:40%;
+}
+.img-float-msg{
+    margin:0 0 10px 20px;
+    float:right;
+    width:25%;
+}
+
+
+/*----- Start Slick Slide -----*/
+.slick-slide {
+    margin: 0px 20px;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-slider
+{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    border: 2px solid #aaa;
+    border-radius: 2px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+/*----- End Slick Slide -----*/
+
+
+.logo-header{
+	background-color: #fff;
+}
+.top-content{
+	background-color: #efefef;
+}
+.custom-white{
+	background-color: #fff;
+}
+.alumni-box{
+	border: 1px solid #f5f5f5;
+	box-shadow: 0 0 15px #ccc;
+	border-radius: 5px;
+	margin-bottom: 25px;
+}
+.alumni-box img{
+	border: 1px solid #ddd;
+	border-radius: 5px 5px 0 0;
+}
+.alumni-box .info{
+	background-color: #4a3f35;
+	color: #fff;
+	padding: 10px;
+	border-radius: 0 0 5px 5px;
+}
+.alumni-box .info h4{
+	color: #fff;
+	text-align: center;
+	margin: 5px 0px;
+	padding-bottom: 7px;
+	border-bottom: 1px solid #68594b;
+}
+
+/*------ Modal Style ------*/
+.modal-header{
+    background-color: #eaeaea;
+    border-radius: 6px 6px 0 0;
+}
+.modal-title{
+    font-size: 16px;
+    font-weight: 600;
+}
+.modal-header .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background-color: #f00;
+    opacity: 0.65;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    text-shadow: none;
+    border-radius: 1px;
+}
+.modal-header .close:hover{
+    opacity: 0.95;
+}
+
+
+.form-check-inline {
+    display: inline-block;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-left: 0;
+    margin-right: 30px;
+}
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"]{
+    margin-right: 5px;
+    margin-left: auto;
+}
+input[type="file"]{
+    width: 100%;
+}
+.form-horizontal .control-label{
+    text-align: left;
+}
+

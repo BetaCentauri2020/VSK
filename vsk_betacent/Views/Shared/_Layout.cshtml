@@ -1,0 +1,273 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewBag.CssClass="active";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="html5 responsive bootstrap template" name="description">
+    <meta content="HTML,CSS,XML,JavaScript,html5,css3, responsive, bootstrap,jquery," name="keywords">
+    <title>Vivekananda Shiksha Kendra</title>
+    <!-- Bootstrap CSS -->
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Icofont -->
+    <link href="~/assets/css/icofont.min.css" rel="stylesheet">
+    <!-- Owl Carousel -->
+    <link href="~/assets/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="~/assets/css/owl.theme.default.min.css" rel="stylesheet">
+    <!-- MetisMenu -->
+    <link href="~/assets/css/metisMenu.min.css" rel="stylesheet">
+    <!-- fonts -->
+    <link href="~/assets/css/fonts.css" rel="stylesheet">
+    <!-- site style -->
+    <link href="~/assets/style.css" rel="stylesheet">
+    <link href="~/assets/css/responsive.css" rel="stylesheet">
+    <!-- datepicker style -->
+    <link href="~/assets/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <!-- datatable style -->
+    <link rel='stylesheet' href='~/css/dataTables.bootstrap.css'>
+    <link rel='stylesheet' href='~/css/dataTables.responsive.css'>
+     <!-- Gallery style -->
+    <link rel='stylesheet' href='~/css/gallery.css'>
+    <!-- Modernizr Js -->
+    <script src="~/assets/vendors/modernizr-js/modernizr.js"></script>
+    <script type="text/javascript">
+            function preventBack() { window.history.forward(); }
+            setTimeout("preventBack()", 0);
+            window.onunload = function () { null };
+    </script>
+</head>
+<body>
+    <!-- Start Sidebar
+    ============================================== -->
+
+    <div class="ation-sidebar scrollbar-light">
+        @if(HttpContextAccessor.HttpContext.Session.GetString("role")=="Admin")
+        {
+            <partial name="_PartialAdminLayout.cshtml" />
+        }
+        else{
+            <partial name="_PartialAluminiLayout.cshtml" />
+        }
+        
+    </div>
+
+    <!-- End of Sidebar
+    ============================================== -->
+    <!-- Start Topbar
+    ============================================== -->
+    <header>
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-2">
+                    <div class="logo">
+                        @if(HttpContextAccessor.HttpContext.Session.GetString("role")=="Admin")
+                        {
+                            <a href='@Url.Action("Dashboard", "Vsk_admin")'><img alt="" class="img-fluid" src="~/assets/images/logo.png"></a>
+
+                        }
+                        else{
+                            <a href='@Url.Action("Index", "ManageAlumini")'><img alt="" class="img-fluid" src="~/assets/images/logo.png"></a>
+
+                        }
+                    </div>
+                    <!--/logo-->
+                </div>
+                <!--/Col-->
+                <div class="col-lg-6">
+                    <div class="content-center">
+                        <div class="menu-toggler">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </div>
+                    <!--/Content Center-->
+                </div>
+                <!--/Col-->
+                <div class="col-lg-4">
+                    <div class="content-right">
+                        <ul>
+                            @* <li>
+                                <div class="btn-group">
+                                    <button aria-expanded="false" aria-haspopup="true" class="dropdown-toggle"
+                                            data-toggle="dropdown" type="button">
+                                        <span class="icon">
+                                            <span class="signal signal-blue"></span>
+                                            <i class="fa fa-bell"></i>
+                                        </span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <button class="dropdown-item" type="button">Action</button>
+                                        <button class="dropdown-item" type="button">Another action</button>
+                                        <button class="dropdown-item" type="button">Something else here</button>
+                                    </div>
+                                </div>
+                            </li> *@
+                            <!--notification-->
+                            <li>
+                                <div class="btn-group">
+                                    <button aria-expanded="false" aria-haspopup="true" class="dropdown-toggle"
+                                            data-toggle="dropdown" type="button">
+                                        <span class="profile-auth">
+                                            <img alt="" class="img-fluid" src="~/assets/images/author.jpg">
+                                        </span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right user-profile-dropdown">
+                                        @if(HttpContextAccessor.HttpContext.Session.GetString("role")=="Admin")
+                                        {
+                                            <a href='@Url.Action("Profile","ManageStaff")' class="dropdown-item"><i class="icofont-ui-user"></i> Profile</a>
+
+                                        }
+                                        else if(HttpContextAccessor.HttpContext.Session.GetString("role")=="Alumini"){
+                                            <a href='@Url.Action("Index","ManageAlumini")' class="dropdown-item"><i class="icofont-ui-user"></i> Profile</a>
+
+                                        }
+                                        else{
+                                             @* Response.Redirect("~/HOME/NoResults"); *@
+                                        }
+                                        @* <a href="login.html" class="dropdown-item"><i class="icofont-ui-settings"></i> Settings</a> *@
+                                        <a href='@Url.Action("Index","Home")' class="dropdown-item"><i class="icofont-logout"></i> Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <!--/profile-->
+                        </ul>
+                    </div>
+                    <!--/Content Right-->
+                </div>
+                <!--/col-->
+
+            </div>
+        </div>
+    </header>
+    <!-- End of Topbar --->
+    @RenderBody()
+    <!-- Start Footer
+    ============================================== -->
+    <footer>
+        <p>Copyright 2020 | Vivekananda Shiksha Kendra | All Rights Reserved</p>
+    </footer>
+
+    <!-- End of Footer
+    ============================================== -->
+    <!-- Alert Messages -->
+    <!-- Modal Error -->
+    <div class="modal fade" id="modalError" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body bg-danger text-white">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="perror"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Success -->
+    <div class="modal fade" id="modalSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body bg-success text-white">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="psuccess"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal warning -->
+    <div class="modal fade" id="modalWarning" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body bg-warning text-dark">
+                    <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="pwarning"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Info -->
+    <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body bg-info text-white">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p id="pinfo"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Alert-->
+    <!-- =============================================
+                   Jquery plugins
+    ============================================== -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/assets/js/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <!-- Counterup -->
+    <script src="~/assets/js/waypoints.min.js"></script>
+    <script src="~/assets/js/counterup.min.js"></script>
+    <!-- MetisMenu -->
+    <script src="~/assets/js/metisMenu.min.js"></script>
+    <!-- Scrollbar -->
+    <script src="~/assets/js/jquery.scrollbar.min.js"></script>
+
+    <!-- AMChart Resources -->
+    <script src="~/assets/js/core.js"></script>
+    <script src="~/assets/js/all-charts.js"></script>
+    <script src="~/assets/js/maps.js"></script>
+    <script src="~/assets/js/worldLow.js"></script>
+    <script src="~/assets/js/animated.js"></script>
+    <script src="~/assets/js/material.js"></script>
+    <script src="~/assets/js/de_DE.js"></script>
+    <script src="~/assets/js/germanyLow.js"></script>
+    <script src="~/assets/js/notosans-sc.js"></script>
+
+
+    <script src="~/assets/js/apexcharts.min.js"></script>
+
+    <script src="~/assets/js/charts.js"></script>
+
+
+    <!-- main js -->
+    <script src="~/assets/js/scripts.js"></script>
+    <!-- Datepicker -->
+    <script src="~/assets/js/bootstrap-datepicker.min.js"></script>
+    <script src='~/assets/js/jquery.dataTables.min.js'></script>
+    <script src='~/assets/js/dataTables.bootstrap.js'></script>
+    <script src='~/assets/js/dataTables.responsive.js'></script>
+     <script src="~/js/slick.js"></script>
+    <script src='~/assets/js/custom.js'></script>
+    <script type="text/javascript">
+        $('table').DataTable();
+        $('#datepicker').datepicker({
+            weekStart: 1,
+            daysOfWeekHighlighted: "6,0",
+            autoclose: true,
+            todayHighlight: true,
+        });
+        $('#datepicker').datepicker("setDate", new Date());
+        DynamicNotify(parseInt(getUrlParameter('type')),getUrlParameter('msg'));
+    </script>
+ @RenderSection("Scripts", required: false)
+</body>
+</html>

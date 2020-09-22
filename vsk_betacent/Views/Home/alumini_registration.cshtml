@@ -1,0 +1,271 @@
+﻿@model vsk_betacent.Models.tbl_alumini_details
+@{
+    Layout = "~/Views/Shared/vsk_master.cshtml";
+}
+
+
+<div class="container">
+
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="page-title">Alumni Registration</h2>
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-6 hidden-xs back-home">
+                <a href="index.html">&larr; Go back Home</a>
+            </div> <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.page-header -->
+
+    <div class="custom-white">
+        <div class="row">
+            @using (Html.BeginForm("alumini_registration", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="col-md-12">
+                    <div class="event-single">
+                        <div class="event-content">
+                            <h4 class="widget-title"><span>Register Here</span></h4>
+                            <form class="form-horizontal">
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">Full Name</label>
+                                    <div class="col-md-4">
+                                        @*<input type="text" class="form-control" value="full name">*@
+                                        <input asp-for="name" class="form-control" required />
+                                        @* <span asp-validation-for="name" class="text-danger"></span> *@
+                                    </div>
+                                    <label class="col-md-2 control-label">Organization</label>
+                                    <div class="col-md-4">
+                                        @*<input type="text" class="form-control" value="organization">*@
+                                        <input asp-for="organisation" class="form-control" required />
+                                        @* <span asp-validation-for="organisation" class="text-danger"></span> *@
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">Profession</label>
+                                    <div class="col-md-4">
+                                        @*<input type="text" class="form-control" value="profession">*@
+                                        <input asp-for="profession" class="form-control" required />
+                                        @* <span asp-validation-for="profession" class="text-danger"></span> *@
+                                    </div>
+                                    <label class="col-md-2 control-label" for="example-email">Year of Leaving School</label>
+                                    <div class="col-md-4">
+
+                                        @Html.DropDownListFor(model => model.passout_year, new List<SelectListItem>
+                                        {
+                                            new SelectListItem { Text = "2020" , Value = "2020" },
+                                            new SelectListItem { Text = "2019" , Value = "2019" }  ,
+                                            new SelectListItem { Text = "2018" , Value = "2018" }  ,
+                                            new SelectListItem { Text = "2017" , Value = "2017" }  ,
+                                            new SelectListItem { Text = "2016" , Value = "2016" }  ,
+                                            new SelectListItem { Text = "2015" , Value = "2015" }  ,
+                                            new SelectListItem { Text = "2014" , Value = "2014" }  ,
+                                            new SelectListItem { Text = "2013" , Value = "2013" }  ,
+                                            new SelectListItem { Text = "2012", Value = "2012" } ,
+                                            new SelectListItem { Text = "2011", Value = "2011" } ,
+                                            new SelectListItem { Text = "2010", Value = "2010" } ,
+                                            new SelectListItem { Text = "2009", Value = "2009" } ,
+                                            new SelectListItem { Text = "2008", Value = "2008" } ,
+                                            new SelectListItem { Text = "2007", Value = "2007" } ,
+                                            new SelectListItem { Text = "2006", Value = "2006" } ,
+                                            new SelectListItem { Text = "2005", Value = "2005" } ,
+                                            new SelectListItem { Text = "2004", Value = "2004" } ,
+                                            new SelectListItem { Text = "2003", Value = "2003" } ,
+                                            new SelectListItem { Text = "2002", Value = "2002" } ,
+                                            new SelectListItem { Text = "2001", Value = "2001" } ,
+                                            new SelectListItem { Text = "2000", Value = "2000" } ,
+                                            new SelectListItem { Text = "1999", Value = "1999" } ,
+                                            new SelectListItem { Text = "1998", Value = "1998" } ,
+                                            new SelectListItem { Text = "1997", Value = "1997" } ,
+                                            new SelectListItem { Text = "1996", Value = "1996" } ,
+                                            new SelectListItem { Text = "1995", Value = "1995" } ,
+                                            new SelectListItem { Text = "1994", Value = "1994" } ,
+                                            new SelectListItem { Text = "1993", Value = "1993" } ,
+                                            new SelectListItem { Text = "1992", Value = "1992" } ,
+                                            new SelectListItem { Text = "1991", Value = "1991" } ,
+                                            new SelectListItem { Text = "1990", Value = "1990" } ,
+                                            new SelectListItem { Text = "1989", Value = "1989" } ,
+                                            new SelectListItem { Text = "1988", Value = "1988" } ,
+                                            new SelectListItem { Text = "1987", Value = "1987" } ,
+                                            new SelectListItem { Text = "1986", Value = "1986" } ,
+                                            new SelectListItem { Text = "1985", Value = "1985" } ,
+                                            new SelectListItem { Text = "1984", Value = "1984" } ,
+                                            new SelectListItem { Text = "1983", Value = "1983" } ,
+                                            new SelectListItem { Text = "1982", Value = "1982" } 
+
+                                            },
+                                        "--Select--",new{@id = "ddldist", @class = "form-control",@required="required" })
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">Gender</label>
+                                    <div class="col-md-4">
+                                        <div class="radio form-check-inline">
+                                            <input asp-for="gender" type="radio" name="gender" id="radio1" value="Male" required>
+                                            <label for="radio1">
+                                                Male
+                                            </label>
+                                        </div>
+                                        <div class="radio form-check-inline">
+                                            <input asp-for="gender" type="radio" name="gender" id="radio2" value="Female" required>
+                                            <label for="radio2">
+                                                Female
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <label class="col-md-2 control-label">Marital Status</label>
+                                    <div class="col-md-4">
+                                        <div class="radio form-check-inline">
+                                            <input asp-for="marital_status" type="radio" name="marital_status" id="radio3" value="Married" required>
+                                            <label for="radio3">
+                                                Married
+                                            </label>
+                                        </div>
+                                        <div class="radio form-check-inline">
+                                            <input asp-for="marital_status" type="radio" name="marital_status" id="radio4" value="Unmarried" required>
+                                            <label for="radio4">
+                                                Unmarried
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">Email ID</label>
+                                    <div class="col-md-4">
+                                        @*<input type="text" class="form-control" value="Email ID">*@
+                                        <input asp-for="eamil" class="form-control" required />
+                                        @* <span asp-validation-for="eamil" class="text-danger"></span> *@
+                                    </div>
+                                    <label class="col-md-2 control-label" for="example-email">DOB</label>
+                                    <div class="col-md-4">
+                                        @*<input class="form-control" data-date-format="dd/mm/yyyy" id="datepicker">*@
+                                        @* <input asp-for="dob" class="form-control" id="datepicker" /> *@
+                                        @Html.TextBoxFor(s => s.dob, "{0:dd/MM/yyyy}", new { @class = "form-control", @type = "date",@required="required" })
+                                        @* <span asp-validation-for="dob" class="text-danger"></span> *@
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">Mobile</label>
+                                    <div class="col-md-4">
+                                        @*<input type="number" class="form-control" value="Mobile Number">*@
+                                        <input asp-for="mobile" class="form-control" required/>
+                                        @* <span asp-validation-for="mobile" class="text-danger"></span> *@
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">Address</label>
+                                    <div class="col-md-10">
+                                        <textarea asp-for="address" class="form-control" rows="" placeholder="Full Address" required></textarea>
+                                        @*<textarea asp-for="address" class="form-control" />*@
+                                        @* <span asp-validation-for="address" class="text-danger"></span> *@
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 control-label">Upload Photo</label>
+                                    <div class="col-md-10">
+                                        @*@Html.EditorFor(model => model.file, new { htmlAttributes = new { @id = "file", @name = "file", @class = "form-control", @type = "file" } })*@
+                                        @*<input asp-for="image" name="image" type="file" class="dropify" data-height="150" />*@
+                                        <input id="file" name="file" type="file" class="form-control" required />
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <div class="col-md-12 text-center">
+                                        <input type="submit" value="Create" class="btn btn-primary waves-effect waves-light btn-sm" />
+                                        @*<button type="submit" class="btn btn-primary waves-effect waves-light btn-sm">
+                                                Submit
+                                            </button>*@
+                                    </div>
+                                </div>
+                            </form>
+                        </div> <!-- /.event-content -->
+                    </div> <!-- /.event-single -->
+                </div> <!-- /.col-md-12 -->
+            }
+        </div> <!-- /.row -->
+
+    </div>
+
+</div> <!-- /.container -->
+
+<a href="#top" id="top-link" class="fa fa-angle-up"></a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group row">
+                        <label class="col-md-3 control-label">Username</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" value="username">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 control-label">Password</label>
+                        <div class="col-md-9">
+                            <input type="password" class="form-control" value="password">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group row">
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="btn btn-primary waves-effect waves-light btn-sm">
+                                Login
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@if (TempData["regmsg"] != null)
+{
+    <script type="text/javascript">
+                            window.onload = function () {
+                                alert('@TempData["regmsg"].ToString()');
+                            };
+    </script>
+}
+<!-- JavaScripts -->
+<script type="text/javascript">
+    $('#datepicker').datepicker({
+        weekStart: 1,
+        daysOfWeekHighlighted: "6,0",
+        autoclose: true,
+        todayHighlight: true,
+    });
+    $('#datepicker').datepicker("setDate", new Date());
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.customer-logos').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: false,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3
+                }
+            }, {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 2
+                }
+            }]
+        });
+    });
+</script>

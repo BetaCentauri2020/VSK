@@ -1,0 +1,76 @@
+﻿@model vsk_betacent.Models.ViewModels.ManageAluminiViewModel
+@{
+    ViewData["Title"] = "alumini_details";
+    Layout = "~/Views/Shared/vsk_master.cshtml";
+}
+
+<div class="container">
+
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="page-title">Alumni</h2>
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-6 hidden-xs back-home">
+                <a href='@Url.Action("Index","Home")'>&larr; Go back Home</a>
+            </div> <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.page-header -->
+
+    <div class="custom-white">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="event-single">
+                    <div class="event-content">
+                        <h4 class="widget-title"><span>Alumni</span></h4>
+                        <div class="row">
+                           <div class="col-sm-12">
+                                <table class="table table-bordered table-hover dt-responsive dataTable dtr-inline" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Name</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Passing Year: activate to sort column ascending">Passing Year</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Profile: activate to sort column ascending">Profile</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if(Model.aluminiList.ToList().Any())
+                                        {
+                                            foreach (var alumini in Model.aluminiList.ToList())
+                                            {
+                                                <tr>
+                                                    <td class="sorting_1">@alumini.name</td>
+                                                    <td>@alumini.passout_year</td>
+                                                    <td>@alumini.eamil</td>
+                                                    <td>
+                                                        <a href="~/Resources/Images/@alumini.file" class="fancybox" data-fancybox-group="group3" >
+                                                            <img alt="No Image" class="img-fluid" src="~/Resources/Images/@alumini.file" width="50px" height="50px"/>
+                                                        </a>
+                                                     </td>
+                                                </tr>
+                                            }
+                                        }
+                                        else{
+                                            <span>No records found.</span>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div> <!-- /.event-content -->
+                </div> <!-- /.event-single -->
+            </div> <!-- /.col-md-12 -->
+
+        </div> <!-- /.row -->
+
+    </div>
+
+</div>
+@section Scripts{
+    <script id="rendered-js">
+        $('table').DataTable();
+    </script>
+}

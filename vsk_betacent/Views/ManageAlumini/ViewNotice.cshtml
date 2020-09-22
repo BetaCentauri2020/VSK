@@ -1,0 +1,82 @@
+﻿@model vsk_betacent.Models.ViewModels.ManageNoticeViewModel
+@{ Layout = "_Layout"; }
+
+
+
+<!-- Start Main content Wrapper
+============================================== -->
+@Html.AntiForgeryToken()
+<div class="content-wrapper">
+    <div class="container-fluid">
+
+        <!-- Breadcrumb -->
+        <div class="page-breadcrumb">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h4>Notice</h4>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Notice</li>
+                        <li>View</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Breadcrumb -->
+        <!-- Statistics -->
+        <section class="ation-statistics home-2">
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-12 mb-xl-0 mb-4 recent-order-list">
+
+                    <div class="card ation-card">
+                        <div class="card-header">
+                            <h3>Alumini Notice</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                @if(Model.noticeList.Any())
+                                {
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Sl. No.</th>
+                                                <th>Title</th>
+                                                <th>Description</th>
+                                                <th>Date Of Publish</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var notice in Model.noticeList)
+                                            {
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>@notice.txt_title</td>
+                                                    <td>@notice.txt_description</td>
+                                                    <td>
+                                                       @notice.dt_dou.ToString("dd/MM/yyyy")
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                }
+                                else{
+                                   <span>No record found.</span>
+                                }
+                                
+                            </div>    
+                        </div>
+                    </div>
+
+                </div>
+                <!--/col-->
+            </div>
+            <!--/Row-->
+        </section>
+        <!-- /Statistics -->
+        <!-- /section -->
+    </div>
+</div>
+
+

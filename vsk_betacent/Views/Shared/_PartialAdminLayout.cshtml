@@ -1,0 +1,56 @@
+<nav class="menu-bar">
+    <ul id="ation-menu">
+        <li>
+            <a  href='@Url.Action("Dashboard", "Vsk_admin")'>
+                <span class="iocn"><i class="icofont-dashboard"></i></span>
+                <span class="name">Dashboard</span>
+            </a>
+        </li>
+        <li >
+            <a aria-expanded="true" class="has-arrow" href="#">
+                <span class="iocn"><i class="icofont-ui-user"></i></span>
+                <span class="name">Manage Staff</span>
+            </a>
+            <ul>
+                <li>
+                    <a href='@Url.Action("Index", "ManageStaff")'>Add Staff</a>
+                </li>
+                <li><a href='@Url.Action("ViewStaff", "ManageStaff")'>Modify Staff</a></li>
+            </ul>
+        </li>
+        <li>
+            <a aria-expanded="true" class="has-arrow" href="#">
+                <span class="iocn"><i class="icofont-newspaper"></i></span>
+                <span class="name">Notice</span>
+            </a>
+            <ul>
+                <li><a href='@Url.Action("Index", "ManageNotice")'>Upload Notice</a></li>
+                <li><a href='@Url.Action("ViewNotice", "ManageNotice")'>Modify Notice</a></li>
+            </ul>
+        </li>
+        <li>
+            <a aria-expanded="true" class="has-arrow" href="#">
+                <span class="iocn"><i class="icofont-contact-add"></i></span>
+                <span class="name">Photo</span>
+            </a>
+            <ul>
+                <li><a href='@Url.Action("Index", "ManageGallery")'>Upload Photo</a></li>
+                <li><a href='@Url.Action("ViewGallery", "ManageGallery")'>Modify Photo</a></li>
+            </ul>
+        </li>
+        <li>
+            <a  href='@Url.Action("ViewAlumini", "ManageAlumini")'>
+                <span class="iocn"><i class="icofont-contact-add"></i></span>
+                <span class="name">Alumini</span>
+            </a>
+            
+        </li>
+        <li>
+            <a  href='@Url.Action("Index", "ManageInquary")'>
+                <span class="iocn"><i class="icofont-contact-add"></i></span>
+                <span class="name">Inquiry</span>
+            </a>
+            
+        </li>
+    </ul>
+</nav>

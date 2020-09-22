@@ -1,0 +1,144 @@
+﻿@model vsk_betacent.Models.ViewModels.ManageAluminiViewModel
+@{ Layout = "_Layout"; }
+
+ <!--============================================== -->
+<!-- Start Main content Wrapper
+============================================== -->
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+
+        <!-- Breadcrumb -->
+        <div class="page-breadcrumb">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h4>Alumini</h4>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Alumini</li>
+                        <li><a href="index.html">View</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Breadcrumb -->
+        <!-- Start -->
+            <section class="ation-statistics">
+                <div class="row">
+                    <div class="col-xl-12 col-md-12 col-12 mb-xl-0 mb-4">
+                        <div class="card ation-card">
+                            <div class="card-header">
+                                <h3>Alumini</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    @if(Model.aluminiList.Any())
+                                    {
+                                         <table class="table table-bordered" style="width: 100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Profession</th>
+                                                <th>Passout Year</th>
+                                                <th>Email</th>
+                                                <th>Mobile No.</th>
+                                                <th>Address</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.aluminiList.OrderBy(x=>x.name).ToList())
+                                            {
+                                            <tr>
+                                                <td>
+                                                    <a href="#" data-toggle="modal" data-target="#manageStaff" onclick="ViewAluminiDetails('@item.registration_number');">
+                                                        @Html.DisplayFor(modelItem => item.name) 
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.profession)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.passout_year)
+                                                </td>
+                                                <td>
+                                                    <span></span>
+                                                    @Html.DisplayFor(modelItem => item.eamil)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.mobile)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.address)
+                                                </td>
+                                                <td>
+                                                    @if(item.status==0)
+                                                    {
+                                                        <span class="badge badge-danger">Pending</span>
+                                                    }
+                                                    else{
+                                                        <span class="badge badge-success">Approved</span>
+                                                    }
+                                                </td>
+                                            </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                    }
+                                    else
+                                    {
+                                        <span>No records found.</span>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/col-->
+                </div>
+                <!--/Row-->
+            </section>
+    </div>
+</div>
+
+<!-- End of Main content Wrapper
+============================================== -->
+<!-- Modal -->
+<div class="modal fade" id="manageStaff" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="divView">
+
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    
+    <script>
+        function ViewAluminiDetails(regd) {
+            $('#divView').empty();
+                $.ajax({
+                    url: '@Url.Action("_PartialViewAluminiDetails","ManageAlumini")',
+                    data: { 'regd': regd },
+                    contentType: 'application/html; charset=utf-8',
+                    type: 'GET',
+                    dataType: "html",
+                    success: function (result) {
+                        $('#exampleModalLongTitle').text('View Alumini');
+                        $('#divView').html(result);
+                    },
+                    error: function (xhr, status) {
+                        alert(status);
+                    }
+                })
+        }
+    </script>
+}
+

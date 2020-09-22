@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewData["Title"] = "contactus";
+    Layout = "~/Views/Shared/vsk_master.cshtml";
+}
+
+<div class="container">
+
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="page-title">Contact Page</h2>
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-6 hidden-xs back-home">
+                <a href="index.html">&larr; Go back Home</a>
+            </div> <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.page-header -->
+
+    <div class="custom-white">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="contact-page">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.3756882062326!2d85.82914781492028!3d20.284710986406168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909e10d3c1133%3A0x443b163447b3d764!2sVivekananda%20Siksha%20Kendra!5e0!3m2!1sen!2sin!4v1594452459419!5m2!1sen!2sin" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div> <!-- /.col-md-12 -->
+
+            <div class="space-s"></div>
+
+            <div class="col-md-8">
+                <div id="" class="contactForm clearfix">
+                    <fieldset>
+                        <label for="name-id">Name</label>
+                        <input type="text" id="name-id" name="name-id" placeholder="name">
+                    </fieldset>
+                    <fieldset>
+                        <label for="surname-id">Contact Details</label>
+                        <input type="text" id="number-id" name="number-id" placeholder="contact details">
+                    </fieldset>
+                    <fieldset>
+                        <label for="email-id">Email ID</label>
+                        <input type="text" id="email-id" name="email-id" placeholder="email id">
+                    </fieldset>
+                    <fieldset>
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="" placeholder="message"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <button id="submit_btn" class="btn main-btn" type="submit" name="">Send Message</button>
+                    </fieldset>
+                </div>
+            </div> <!-- /.col-md-8 -->
+
+            <div class="col-md-4">
+                <div class="box-content" style="margin-top:0;">
+                    <h4 class="widget-title"><span>Contact Address</span></h4>
+                    <p>
+                        <strong>Vivekananda Shiksha Kendra</strong><br><br>
+                        <i class="fa fa-map-marker" style="padding-right:5px"></i>Unit-4, Bhubaneswar, Odisha<br>
+                        <strong><i class="fa fa-phone" style="padding-right:5px"></i></strong>0674-2393776<br>
+                        <strong><i class="fa fa-envelope" style="padding-right:5px"></i></strong><a href="mailto:">vskunitiv1982@gmail.com</a>, <a href="mailto:">vskunitiv_mail@rediffmail.com</a>
+                    </p>
+
+                </div> <!-- /.box-content -->
+            </div> <!-- /.col-md-4 -->
+
+        </div> <!-- /.row -->
+
+    </div>
+
+</div>
+<script type="text/javascript">
+		    $('#datepicker').datepicker({
+		        weekStart: 1,
+		        daysOfWeekHighlighted: "6,0",
+		        autoclose: true,
+		        todayHighlight: true,
+		    });
+		    $('#datepicker').datepicker("setDate", new Date());
+</script>
+<script type="text/javascript">
+			$(document).ready(function(){
+			    $('.customer-logos').slick({
+			        slidesToShow: 5,
+			        slidesToScroll: 1,
+			        autoplay: true,
+			        autoplaySpeed: 1500,
+			        arrows: false,
+			        dots: false,
+			        pauseOnHover: false,
+			        responsive: [{
+			            breakpoint: 768,
+			            settings: {
+			                slidesToShow: 3
+			            }
+			        }, {
+			            breakpoint: 520,
+			            settings: {
+			                slidesToShow: 2
+			            }
+			        }]
+			    });
+			});
+</script>

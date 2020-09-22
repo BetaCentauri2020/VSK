@@ -1,0 +1,175 @@
+﻿@model vsk_betacent.Models.ViewModels.ManageStaffViewModel
+@{
+    ViewData["Title"] = "Faculty";
+    Layout = "~/Views/Shared/vsk_master.cshtml";
+}
+
+<div class="container">
+
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="page-title">Faculty</h2>
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-6 hidden-xs back-home">
+                <a href='@Url.Action("Index","Home")'>&larr; Go back Home</a>
+            </div> <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.page-header -->
+
+    <div class="custom-white">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="event-single">
+                    <div class="event-content">
+                        <h4 class="widget-title"><span>Administrative</span></h4>
+                        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap">
+                            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table table-bordered table-hover dt-responsive dataTable dtr-inline" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                                        <thead>
+                                            <tr>
+                                                <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Name</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Designation: activate to sort column ascending">Designation</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Profile: activate to sort column ascending">Profile</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if(Model.staffList.Where(x=>x.int_fk_prof==1).ToList().Any())
+                                            {
+                                                foreach (var faulty in Model.staffList.Where(x=>x.int_fk_prof==1).ToList())
+                                                {
+                                                    <tr>
+                                                        <td class="sorting_1">@faulty.txt_nm</td>
+                                                        <td>@faulty.desg_id.txt_desig</td>
+                                                        <td>@faulty.txt_email</td>
+                                                        <td><img alt="No Image" class="img-fluid" src="~/Resources/Gallery/@faulty.txt_img" width="50px" height="50px"/></td>
+                                                    </tr>
+                                                }
+                                            }
+                                            else{
+                                                <span>No records found.</span>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="space-s"></div>
+                        <h4 class="widget-title"><span>Teaching Faculty</span></h4>
+                        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap">
+                            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table table-bordered table-hover dt-responsive dataTable dtr-inline" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                                        <thead>
+                                            <tr>
+                                                <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Name</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Designation: activate to sort column ascending">Designation</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Profile: activate to sort column ascending">Profile</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if(Model.staffList.Where(x=>x.int_fk_prof==2).ToList().Any())
+                                            {
+                                                foreach (var faulty in Model.staffList.Where(x=>x.int_fk_prof==2).ToList())
+                                                {
+                                                    <tr>
+                                                        <td class="sorting_1">@faulty.txt_nm</td>
+                                                        <td>@faulty.desg_id.txt_desig</td>
+                                                        <td>@faulty.txt_email</td>
+                                                        <td><img alt="No Image" class="img-fluid" src="~/Resources/Gallery/@faulty.txt_img" width="50px" height="50px"/></td>
+                                                    </tr>
+                                                }
+                                            }
+                                            else{
+                                                <span>No records found.</span>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="space-s"></div>
+                        <h4 class="widget-title"><span>Supporting Staff</span></h4>
+                        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap">
+                            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table table-bordered table-hover dt-responsive dataTable dtr-inline" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                                        <thead>
+                                            <tr>
+                                                <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending">Name</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Designation: activate to sort column ascending">Designation</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Profile: activate to sort column ascending">Profile</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if(Model.staffList.Where(x=>x.int_fk_prof==3).ToList().Any())
+                                            {
+                                                foreach (var faulty in Model.staffList.Where(x=>x.int_fk_prof==3).ToList())
+                                                {
+                                                    <tr>
+                                                        <td class="sorting_1">@faulty.txt_nm</td>
+                                                        <td>@faulty.desg_id.txt_desig</td>
+                                                        <td>@faulty.txt_email</td>
+                                                        <td><img alt="No Image" class="img-fluid" src="~/Resources/Gallery/@faulty.txt_img" width="50px" height="50px"/></td>
+                                                    </tr>
+                                                }
+                                            }
+                                            else{
+                                                <span>No records found.</span>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div> <!-- /.event-content -->
+                </div> <!-- /.event-single -->
+            </div> <!-- /.col-md-12 -->
+
+        </div> <!-- /.row -->
+
+    </div>
+
+</div> 
+@* <script type="text/javascript">
+            $(document).ready(function(){
+                $('.customer-logos').slick({
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 1500,
+                    arrows: false,
+                    dots: false,
+                    pauseOnHover: false,
+                    responsive: [{
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    }, {
+                        breakpoint: 520,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    }]
+                });
+            });
+</script> *@
+
+@section Scripts{
+    <script id="rendered-js">
+        $('table').DataTable();
+    </script>
+}

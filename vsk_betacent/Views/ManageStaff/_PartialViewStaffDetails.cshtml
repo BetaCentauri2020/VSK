@@ -1,0 +1,80 @@
+﻿@model vsk_betacent.Models.ViewModels.ManageStaffViewModel
+
+<form class="form-horizontal">
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Name :</label>
+        <div class="col-md-4">
+            @Html.DisplayFor(x => x.editStaff.txt_nm, new { htmlAttributes = new { @class = "form-control" } })
+            
+        </div>
+        <label class="col-md-2 control-label">Qualification :</label>
+        <div class="col-md-4">
+            @Html.DisplayFor(s => s.editStaff.qualif_id.txt_qua, new { htmlAttributes = new { @class = "form-control" } } )
+           
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Profession :</label>
+        <div class="col-md-4">
+            @Html.DisplayFor(s => s.editStaff.prof_id.txt_profs, new { htmlAttributes = new { @class = "form-control" } })
+            
+        </div>
+        <label class="col-md-2 control-label" for="example-email">Designation</label>
+        <div class="col-md-4">
+            @Html.DisplayFor(s => s.editStaff.desg_id.txt_desig, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Subject Area :</label>
+        <div class="col-md-4">
+            @{ string subList = null;}
+            @if(Model.editStaff.txt_fk_sub_area!=null){
+                foreach(var sub in Model.editStaff.txt_fk_sub_area.Split(',').Select(n => Convert.ToInt32(n)).ToArray())
+                {
+                    subList += Model.subAreaList.Where(x => x.int_id == sub).Select(x => x.txt_sub).FirstOrDefault() + ",";
+                }
+                <span>@subList.TrimEnd(',')</span>
+            }
+            else{<span>NA</span>}
+        </div>
+        <label class="col-md-2 control-label">DOB :</label>
+        <div class="col-md-4">
+           <span class = "control-label">@Model.editStaff.dt_dob.ToString("dd/MM/yyyy")</span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Contact No :</label>
+        <div class="col-md-4">
+            @* @Html.DisplayFor(x => x.editStaff.txt_mob, new { htmlAttributes = new { @class = "form-control" } }) *@
+           <span > @CustomUtility.GetNA(Model.editStaff.txt_mob)</span>
+        </div>
+        <label class="col-md-2 control-label">Email ID :</label>
+        <div class="col-md-4">
+            @Html.DisplayFor(x => x.editStaff.txt_email, new { htmlAttributes = new { @class = "form-control" } })
+
+            
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Blood Group :</label>
+        <div class="col-md-4">
+            @Html.DisplayFor(s => s.editStaff.bld_id.txt_bld_gr, new { htmlAttributes = new { @class = "form-control" } })
+
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Address :</label>
+        <div class="col-md-4">
+            @* @Html.DisplayFor(s => s.editStaff.txt_address, new { @class = "form-control", @placeholder = "Address" }) *@
+            <span > @CustomUtility.GetNA(Model.editStaff.txt_address)</span>
+        </div>
+        <label class="col-md-2 control-label">Photo :</label>
+        <div class="col-md-4">
+            @if(Model.editStaff.txt_img!=null)
+            {
+            <img src="~/Resources/Profile/@Model.editStaff.txt_img" height="50px" width="50px" />
+            }
+            else{<span>NA</span>} 
+        </div>
+    </div>
+</form>

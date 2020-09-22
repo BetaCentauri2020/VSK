@@ -1,0 +1,73 @@
+﻿@model vsk_betacent.Models.ViewModels.ManageStaffViewModel
+
+@Html.AntiForgeryToken()
+@using (Html.BeginForm("UpdateStaff", "ManageStaff", FormMethod.Post, new { @class= "form-horizontal" }))
+{
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Name :</label>
+        <div class="col-md-4">
+            @Html.DisplayFor(x => x.editStaff.txt_nm, new { htmlAttributes = new { @class = "form-control", @placeholder = "Your Name" } })
+
+        </div>
+        <label class="col-md-2 control-label">Qualification :</label>
+        <div class="col-md-4">
+            @Html.DisplayFor(s => s.editStaff.qualif_id.txt_qua, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Profession :</label>
+        <div class="col-md-4">
+            @Html.DropDownListFor(s => s.editStaff.int_fk_prof, new SelectList(Model.profesnList, "int_id", "txt_profs"), "--Select--", new { @class = "form-control single-select" ,@required="required"})
+            <spna class="col-md-xs text-danger">*</spna>
+        </div>
+        <label class="col-md-2 control-label" for="example-email">Designation :</label>
+        <div class="col-md-4">
+            @Html.DropDownListFor(s => s.editStaff.int_fk_desg, new SelectList(Model.desigTypeList, "int_id", "txt_desig"), "--Select--", new { @class = "form-control single-select",@required="required" })
+            <spna class="text-danger">*</spna>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Subject Area :</label>
+        <div class="col-md-4">
+            @Html.ListBoxFor(s => s.subAreaForStaff, new MultiSelectList(Model.subAreaList, "int_id", "txt_sub"), new { @class = "chzn-select form-control", multiple = "multiple" })
+
+        </div>
+        <label class="col-md-2 control-label">DOB :</label>
+        <div class="col-md-4">
+            @* @Html.DisplayFor(s => s.editStaff.dt_dob, "{0:dd/MM/yyyy}", new { @class = "form-control" }) *@
+            @Model.editStaff.dt_dob.ToString("dd/MM/yyyy")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Contact No :</label>
+        <div class="col-md-4">
+            @Html.EditorFor(x => x.editStaff.txt_mob, new { htmlAttributes = new { @class = "form-control", @placeholder = "Mobile", @type = "number", @maxLength = 10 } })
+
+        </div>
+        <label class="col-md-2 control-label">Email ID :</label>
+        <div class="col-md-4">
+            @Html.EditorFor(x => x.editStaff.txt_email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" ,@required="required"} })
+            <spna class="text-danger">*</spna>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Blood Group :</label>
+        <div class="col-md-4">
+            @Html.DisplayFor(s => s.editStaff.bld_id.txt_bld_gr, new { htmlAttributes = new { @class = "form-control" } })
+
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-md-2 control-label">Address :</label>
+        <div class="col-md-10">
+            @Html.TextAreaFor(s => s.editStaff.txt_address, new { @class = "form-control", @placeholder = "Address" })
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-12 text-center">
+            @Html.HiddenFor(s=>s.editStaff.int_id)
+            <input type="submit"class="btn btn-primary waves-effect waves-light btn-sm" value="Update">
+        </div>
+    </div>
+}
+ 

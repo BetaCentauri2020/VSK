@@ -1,0 +1,179 @@
+﻿@model vsk_betacent.Models.ViewModels.ManageStaffViewModel
+@{ Layout = "_Layout"; }
+
+
+
+<!-- Start Main content Wrapper
+============================================== -->
+@Html.AntiForgeryToken()
+<div class="content-wrapper">
+    <div class="container-fluid">
+
+        <!-- Breadcrumb -->
+        <div class="page-breadcrumb">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h4>Modify Staff</h4>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Manage Staff</li>
+                        <li><a href="index.html">Dashboard</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Breadcrumb -->
+        <!-- Statistics -->
+        <section class="ation-statistics home-2">
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-12 mb-xl-0 mb-4 recent-order-list">
+
+                    <div class="card ation-card">
+                        <div class="card-header">
+                            <h3>Modify Staff</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                @if(Model.staffList.Any())
+                                {
+                                    <table class="table table-bordered" >
+                                        <thead>
+                                            <tr>
+                                                <th>Sl No</th>
+                                                <th>Name</th>
+                                                <th>Profession</th>
+                                                <th>Designation</th>
+                                                <th>Contact No.</th>
+                                                <th>Email ID</th>
+                                                <th>Action</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @{int i=1;}
+                                            @foreach (var user in Model.staffList)
+                                            {
+                                                <tr>
+                                                    <td>@i</td>
+                                                    <td>@user.txt_nm</td>
+                                                    <td>@user.prof_id.txt_profs</td>
+                                                    <td>@user.desg_id.txt_desig</td>
+                                                    <td>@user.txt_mob</td>
+                                                    <td>@user.txt_email</td>
+                                                    <td>
+                                                        <a href="#" class="btn-sm btn-primary btn-xs waves-effect waves-light" data-toggle="modal" data-target="#manageStaff" onclick="ManageStaff('@user.int_id','E');"><i class="fa fa-edit"></i></a>
+                                                        <a href="#" class="btn-sm btn-success btn-xs waves-effect waves-light" data-toggle="modal" data-target="#manageStaff" onclick="ManageStaff('@user.int_id','V');"><i class="fa fa-eye"></i></a>
+                                                        <a href="#" class="btn-sm btn-danger btn-xs waves-effect waves-light" onclick="ManageStaff('@user.int_id','D');"><i class="fa fa-trash"></i></a>
+                                                    </td>
+                                                    <td>
+                                                        @if (user.int_status == 0)
+                                                        {
+                                                            <span class="badge badge-success badge-pill">Continue</span>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="badge badge-danger badge-pill">Discontinued</span>
+                                                        }
+                                                    </td>
+                                                </tr>
+                                                i++;
+                                            }
+                                        </tbody>
+                                    </table>     
+                                }
+                                else{
+                                    <span>No record found.</span>
+                                }
+                               
+                            </div>    
+                        </div>
+                    </div>
+
+                </div>
+                <!--/col-->
+            </div>
+            <!--/Row-->
+        </section>
+        <!-- /Statistics -->
+        <!-- /section -->
+    </div>
+</div>
+<!-- End of Main content Wrapper
+============================================== -->
+<!-- Modal -->
+<div class="modal fade" id="manageStaff" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="divView">
+
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    
+    <script>
+        function ManageStaff(id, type) {
+            $('#divView').empty();
+            if (type == 'V') {
+                $.ajax({
+                    url: '@Url.Action("_PartialViewStaffDetails","ManageStaff")',
+                    data: { 'id': id },
+                    contentType: 'application/html; charset=utf-8',
+                    type: 'GET',
+                    dataType: "html",
+                    success: function (result) {
+                        $('#exampleModalLongTitle').text('View Staff');
+                        $('#divView').html(result);
+                    },
+                    error: function (xhr, status) {
+                        alert(status);
+                    }
+                })
+            }
+            else if (type == 'E') {
+                $.ajax({
+                    url: '@Url.Action("_PartialEditStaffDetails","ManageStaff")',
+                    data: { 'id': id },
+                    contentType: 'application/html; charset=utf-8',
+                    type: 'GET',
+                    dataType: "html",
+                    success: function (result) {
+                        $('#exampleModalLongTitle').text("Edit Staff");
+                        $('#divView').html(result);
+                    },
+                    error: function (xhr, status) {
+                        alert(status);
+                    }
+                })
+            }
+            else {
+                var isDiscontinue = confirm("Are you sure you want to discontinue the staff?");
+                if (isDiscontinue) {
+                    $.ajax({
+                        url: '@Url.Action("DiscontinueStaff", "ManageStaff")',
+                        data: { id: id },
+                        contentType: 'application/x-www-form-urlencoded',
+                        type: 'POST',
+                        dataType: "json",
+                        success: function (result) {
+                            
+                        },
+                        error: function (xhr, status) {
+                            alert(status);
+                        }
+                    })
+                } 
+            }
+
+        }
+
+    </script>
+}

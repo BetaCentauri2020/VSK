@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewData["Title"] = "admission";
+    Layout = "~/Views/Shared/vsk_master.cshtml";
+}
+
+<h1>Admission</h1>
+
+<div class="container">
+
+    <div class="page-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <h2 class="page-title">Admission</h2>
+            </div> <!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-6 hidden-xs back-home">
+                <a href='@Url.Action("Index","Home")'>&larr; Go back Home</a>
+            </div> <!-- /.col-md-6 -->
+        </div> <!-- /.row -->
+    </div> <!-- /.page-header -->
+
+    <div class="custom-white">
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="event-single">
+                    <div class="event-content">
+                        <h4 class="widget-title"><span>Age Limit</span></h4>
+                        <p>Given is the maximum and minimum age limit for each of the class to get admission into Vivekananda Shiksha Kendra</p>
+                        <div class="table-responsive">
+                            <table class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Class</th>
+                                        <th>Minimum age as on 31<sup>st</sup> March</th>
+                                        <th>Maximum age as on 31<sup>st</sup> March</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Class 1</td>
+                                        <td>5 Years</td>
+                                        <td>7 Years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Class 2</td>
+                                        <td>6 Years</td>
+                                        <td>8 Years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Class 3</td>
+                                        <td>7 Years</td>
+                                        <td>9 Years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Class 4</td>
+                                        <td>8 Years</td>
+                                        <td>10 Years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Class 5</td>
+                                        <td>9 Years</td>
+                                        <td>11 Years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Class 6</td>
+                                        <td>10 Years</td>
+                                        <td>12 Years</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Class 7</td>
+                                        <td>11 Years</td>
+                                        <td>13 Years</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="space-s"></div>
+                        <h4 class="widget-title"><span>Reservation Criteria</span></h4>
+                        <p>Given is the maximum and minimum age limit for each of the class to get admission into Vivekananda Shiksha Kendra</p>
+                        <div class="table-responsive">
+                            <table class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Reservation Percentage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Scheduled Tribe (ST)</td>
+                                        <td>7.5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Schedules Caste (SC)</td>
+                                        <td>15%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Differently Abled Candidates</td>
+                                        <td>3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Economically Weaker Sections (EWS)</td>
+                                        <td>25%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> <!-- /.event-content -->
+                </div> <!-- /.event-single -->
+            </div> <!-- /.col-md-12 -->
+
+        </div> <!-- /.row -->
+
+    </div>
+
+</div>
+<script type="text/javascript">
+		    $('#datepicker').datepicker({
+		        weekStart: 1,
+		        daysOfWeekHighlighted: "6,0",
+		        autoclose: true,
+		        todayHighlight: true,
+		    });
+		    $('#datepicker').datepicker("setDate", new Date());
+</script>
+<script type="text/javascript">
+			$(document).ready(function(){
+			    $('.customer-logos').slick({
+			        slidesToShow: 5,
+			        slidesToScroll: 1,
+			        autoplay: true,
+			        autoplaySpeed: 1500,
+			        arrows: false,
+			        dots: false,
+			        pauseOnHover: false,
+			        responsive: [{
+			            breakpoint: 768,
+			            settings: {
+			                slidesToShow: 3
+			            }
+			        }, {
+			            breakpoint: 520,
+			            settings: {
+			                slidesToShow: 2
+			            }
+			        }]
+			    });
+			});
+</script>

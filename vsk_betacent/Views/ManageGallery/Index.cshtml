@@ -1,0 +1,96 @@
+﻿@model vsk_betacent.Models.ViewModels.ManageGalleryViewModel
+@{ Layout = "_Layout"; }
+    ============================================== -->
+<!-- Start Main content Wrapper
+============================================== -->
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+
+        <!-- Breadcrumb -->
+        <div class="page-breadcrumb">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h4>Add Gallery</h4>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Manage Gallery</li>
+                        <li><a href="index.html">Add Image</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Breadcrumb -->
+        <!-- Start -->
+        @Html.AntiForgeryToken()
+        @using (Html.BeginForm("AddGallery", "ManageGallery", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <section class="ation-statistics">
+                <div class="row">
+                    <div class="col-xl-12 col-md-12 col-12 mb-xl-0 mb-4">
+
+                        <div class="card ation-card">
+                            <div class="card-header">
+                                <h3>Add Notice</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12 table-responsive">
+                                        <table id="faqs" class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="30%">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Title<span class="text-danger">*</span></label>
+                                                            <div>
+                                                                @Html.EditorFor(x => x.addImage.txt_title, new { htmlAttributes = new { @class = "form-control", @placeholder = "Title", @required = true} })
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td width="30%">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Position</label>
+                                                            <div>
+                                                                @Html.EditorFor(x => x.addImage.int_position, new { htmlAttributes = new { @class = "form-control", @placeholder = "Position" ,@type="number"} })
+                                                               
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td width="30%">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Upload Photo<span class="text-danger">*</span></label>
+                                                            <div>
+                                                                @Html.EditorFor(s=>s.profilePic, new{ htmlAttributes = new { @class = "form-control ", @type = "file", @accept = ".png, .jpg, .jpeg" ,@name="file",@id="file",@required = true}})
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody> 
+                                        </table>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="form-group row">
+                                    <div class="col-md-12 text-center">
+                                        <input type="submit" class="btn btn-primary waves-effect waves-light btn-sm" value="Submit">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--/col-->
+                </div>
+                <!--/Row-->
+            </section>
+        }
+    </div>
+</div>
+
+<!-- End of Main content Wrapper
+============================================== -->
+
+
